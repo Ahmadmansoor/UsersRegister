@@ -1911,11 +1911,23 @@ Namespace IOUsersDataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT InOutId, UserId, UserName, TimeIn, TimeOut, DifTime FROM dbo.InOutTable"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "INSERT INTO [dbo].[InOutTable] ([UserId], [UserName], [TimeIn], [TimeOut], [DifTi"& _ 
+                "me]) VALUES (@UserId, @UserName, @TimeIn, @TimeOut, @DifTime);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT InOutId, "& _ 
+                "UserId, UserName, TimeIn, TimeOut, DifTime FROM InOutTable WHERE (InOutId = SCOP"& _ 
+                "E_IDENTITY())"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserId", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "UserId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NVarChar, 200, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TimeIn", Global.System.Data.SqlDbType.Time, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "TimeIn", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TimeOut", Global.System.Data.SqlDbType.Time, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "TimeOut", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DifTime", Global.System.Data.SqlDbType.Time, 5, Global.System.Data.ParameterDirection.Input, 0, 0, "DifTime", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2159,6 +2171,53 @@ Namespace IOUsersDataSetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update(ByVal UserId As Global.System.Nullable(Of Integer), ByVal UserName As String, ByVal TimeIn As Global.System.Nullable(Of Global.System.TimeSpan), ByVal TimeOut As Global.System.Nullable(Of Global.System.TimeSpan), ByVal DifTime As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_InOutId As Integer, ByVal Original_UserId As Global.System.Nullable(Of Integer), ByVal Original_UserName As String, ByVal Original_TimeIn As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_TimeOut As Global.System.Nullable(Of Global.System.TimeSpan), ByVal Original_DifTime As Global.System.Nullable(Of Global.System.TimeSpan)) As Integer
             Return Me.Update(UserId, UserName, TimeIn, TimeOut, DifTime, Original_InOutId, Original_UserId, Original_UserName, Original_TimeIn, Original_TimeOut, Original_DifTime, Original_InOutId)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, false)>  _
+        Public Overloads Overridable Function InsertQuery(ByVal UserId As Global.System.Nullable(Of Integer), ByVal UserName As String, ByVal TimeIn As String, ByVal TimeOut As String, ByVal DifTime As String) As Integer
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (UserId.HasValue = true) Then
+                command.Parameters(0).Value = CType(UserId.Value,Integer)
+            Else
+                command.Parameters(0).Value = Global.System.DBNull.Value
+            End If
+            If (UserName Is Nothing) Then
+                command.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(1).Value = CType(UserName,String)
+            End If
+            If (TimeIn Is Nothing) Then
+                command.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(2).Value = CType(TimeIn,String)
+            End If
+            If (TimeOut Is Nothing) Then
+                command.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(3).Value = CType(TimeOut,String)
+            End If
+            If (DifTime Is Nothing) Then
+                command.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                command.Parameters(4).Value = CType(DifTime,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Integer
+            Try 
+                returnValue = command.ExecuteNonQuery
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            Return returnValue
         End Function
     End Class
     

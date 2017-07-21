@@ -72,7 +72,7 @@ Partial Class AccessForm
         '
         Me.Bu_Exit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bu_Exit.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bu_Exit.Location = New System.Drawing.Point(861, 416)
+        Me.Bu_Exit.Location = New System.Drawing.Point(1093, 599)
         Me.Bu_Exit.Margin = New System.Windows.Forms.Padding(4)
         Me.Bu_Exit.Name = "Bu_Exit"
         Me.Bu_Exit.Size = New System.Drawing.Size(101, 68)
@@ -128,7 +128,7 @@ Partial Class AccessForm
         Me.InOutTableBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.InOutTableBindingNavigator.Name = "InOutTableBindingNavigator"
         Me.InOutTableBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.InOutTableBindingNavigator.Size = New System.Drawing.Size(1293, 25)
+        Me.InOutTableBindingNavigator.Size = New System.Drawing.Size(1196, 25)
         Me.InOutTableBindingNavigator.TabIndex = 2
         Me.InOutTableBindingNavigator.Text = "BindingNavigator1"
         Me.InOutTableBindingNavigator.Visible = False
@@ -231,6 +231,9 @@ Partial Class AccessForm
         Me.InOutTableDataGridView.AllowUserToAddRows = False
         Me.InOutTableDataGridView.AllowUserToDeleteRows = False
         Me.InOutTableDataGridView.AllowUserToOrderColumns = True
+        Me.InOutTableDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.InOutTableDataGridView.AutoGenerateColumns = False
         Me.InOutTableDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.InOutTableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -238,7 +241,7 @@ Partial Class AccessForm
         Me.InOutTableDataGridView.DataSource = Me.InOutTableBindingSource
         Me.InOutTableDataGridView.Location = New System.Drawing.Point(3, 3)
         Me.InOutTableDataGridView.Name = "InOutTableDataGridView"
-        Me.InOutTableDataGridView.Size = New System.Drawing.Size(959, 406)
+        Me.InOutTableDataGridView.Size = New System.Drawing.Size(1191, 592)
         Me.InOutTableDataGridView.TabIndex = 3
         '
         'DataGridViewTextBoxColumn1
@@ -287,9 +290,9 @@ Partial Class AccessForm
         '
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusLabel3, Me.StatusLabel1, Me.StatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 485)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 671)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(964, 26)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1196, 26)
         Me.StatusStrip1.TabIndex = 34
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -319,8 +322,10 @@ Partial Class AccessForm
         '
         'PB_Stamp
         '
-        Me.PB_Stamp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PB_Stamp.Location = New System.Drawing.Point(773, 416)
+        Me.PB_Stamp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PB_Stamp.BackgroundImage = Global.UsersRegister.My.Resources.Resources._error
+        Me.PB_Stamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PB_Stamp.Location = New System.Drawing.Point(996, 599)
         Me.PB_Stamp.Name = "PB_Stamp"
         Me.PB_Stamp.Size = New System.Drawing.Size(81, 66)
         Me.PB_Stamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -331,7 +336,7 @@ Partial Class AccessForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(964, 511)
+        Me.ClientSize = New System.Drawing.Size(1196, 697)
         Me.Controls.Add(Me.PB_Stamp)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.InOutTableDataGridView)
@@ -343,9 +348,9 @@ Partial Class AccessForm
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "AccessForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AccessForm"
         Me.TopMost = True
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IOUsersDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.InOutTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

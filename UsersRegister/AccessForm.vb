@@ -27,6 +27,7 @@ Public Class AccessForm
             AxZKFPEngX1.EndEngine()
             StatusLabel3.Text = "Initial Failed"
         End If
+        Me.WindowState = FormWindowState.Maximized
     End Sub
 
     Private Sub AccessForm_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -48,11 +49,11 @@ Public Class AccessForm
     Private Sub AxZKFPEngX1_OnCapture(sender As Object, e As IZKFPEngXEvents_OnCaptureEvent) Handles AxZKFPEngX1.OnCapture
         Dim RegChanged As Boolean = False
         Select Case In_Out_Time
-            Case 1
+            Case 1  ' login 
                 Dim sTemp As String = String.Empty
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
-                Dim CheckifUserReg = From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
+                Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
@@ -61,10 +62,13 @@ Public Class AccessForm
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)
+                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
 
+                If (CheckifUserReg.UsersId <> 0) Then
+                    InOutTableTableAdapter.InsertQuery(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                End If
 
-            Case 2
+            Case 2  'logout
                 Dim sTemp As String = String.Empty
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
