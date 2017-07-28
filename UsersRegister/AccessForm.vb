@@ -64,15 +64,21 @@ Public Class AccessForm
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
 
+
                 If (CheckifUserReg.UsersId <> 0) Then
-                    InOutTableTableAdapter.InsertQuery(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                    Dim IsUserExit = InOutTableTableAdapter.GetDataBy_CheckOut(CheckifUserReg.UsersId, "")
+                    If (IsUserExit.Any) Then
+                        '  run sound file to till the user to Log out first 
+                    Else
+                        InOutTableTableAdapter.InsertQuery(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                    End If
                 End If
 
             Case 2  'logout
                 Dim sTemp As String = String.Empty
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
-                Dim CheckifUserReg = From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
+                Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
@@ -81,7 +87,15 @@ Public Class AccessForm
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
                                                                                      AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)
+                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
+                If (CheckifUserReg.UsersId <> 0) Then
+                    Dim IsUserInThisday = InOutTableTableAdapter.GetDataBy_IsInToday(CheckifUserReg.UsersId, Today)
+                    If (IsUserInThisday.Any) Then
+                        '  run sound file to till the user to Log out first 
+                    Else
+                        InOutTableTableAdapter.Upda(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                    End If
+                End If
 
         End Select
     End Sub
