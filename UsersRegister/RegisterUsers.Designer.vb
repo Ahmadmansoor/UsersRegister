@@ -54,6 +54,7 @@ Partial Class RegisterUsers
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.UsersStampsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.UsersIdTextBox = New System.Windows.Forms.TextBox()
         Me.UserNameTextBox = New System.Windows.Forms.TextBox()
@@ -94,7 +95,6 @@ Partial Class RegisterUsers
         Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         UsersIdLabel = New System.Windows.Forms.Label()
         UserNameLabel = New System.Windows.Forms.Label()
         SectionLabel = New System.Windows.Forms.Label()
@@ -386,6 +386,15 @@ Partial Class RegisterUsers
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 25)
         '
+        'ToolStripButton1
+        '
+        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
+        Me.ToolStripButton1.Name = "ToolStripButton1"
+        Me.ToolStripButton1.RightToLeftAutoMirrorImage = True
+        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton1.Text = "Add new"
+        '
         'UsersStampsBindingNavigatorSaveItem
         '
         Me.UsersStampsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -400,6 +409,7 @@ Partial Class RegisterUsers
         Me.UsersIdTextBox.Location = New System.Drawing.Point(109, 18)
         Me.UsersIdTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.UsersIdTextBox.Name = "UsersIdTextBox"
+        Me.UsersIdTextBox.ReadOnly = True
         Me.UsersIdTextBox.Size = New System.Drawing.Size(62, 25)
         Me.UsersIdTextBox.TabIndex = 2
         '
@@ -666,87 +676,91 @@ Partial Class RegisterUsers
         Me.DataGridViewTextBoxColumn2.DataPropertyName = "UserName"
         Me.DataGridViewTextBoxColumn2.HeaderText = "UserName"
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
         '
         'DataGridViewTextBoxColumn3
         '
         Me.DataGridViewTextBoxColumn3.DataPropertyName = "Section"
         Me.DataGridViewTextBoxColumn3.HeaderText = "Section"
         Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
         '
         'DataGridViewTextBoxColumn4
         '
         Me.DataGridViewTextBoxColumn4.DataPropertyName = "Mobile"
         Me.DataGridViewTextBoxColumn4.HeaderText = "Mobile"
         Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
         '
         'DataGridViewTextBoxColumn5
         '
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "Stamp1"
         Me.DataGridViewTextBoxColumn5.HeaderText = "Stamp1"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "Stamp2"
         Me.DataGridViewTextBoxColumn6.HeaderText = "Stamp2"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
         '
         'DataGridViewTextBoxColumn7
         '
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "Stamp3"
         Me.DataGridViewTextBoxColumn7.HeaderText = "Stamp3"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
         '
         'DataGridViewTextBoxColumn8
         '
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "Stamp4"
         Me.DataGridViewTextBoxColumn8.HeaderText = "Stamp4"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
         '
         'DataGridViewTextBoxColumn9
         '
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "Stamp5"
         Me.DataGridViewTextBoxColumn9.HeaderText = "Stamp5"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
         '
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "Stamp6"
         Me.DataGridViewTextBoxColumn10.HeaderText = "Stamp6"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
         '
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "Stamp7"
         Me.DataGridViewTextBoxColumn11.HeaderText = "Stamp7"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
         '
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "Stamp8"
         Me.DataGridViewTextBoxColumn12.HeaderText = "Stamp8"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
         '
         'DataGridViewTextBoxColumn13
         '
         Me.DataGridViewTextBoxColumn13.DataPropertyName = "Stamp9"
         Me.DataGridViewTextBoxColumn13.HeaderText = "Stamp9"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
         '
         'DataGridViewTextBoxColumn14
         '
         Me.DataGridViewTextBoxColumn14.DataPropertyName = "Stamp10"
         Me.DataGridViewTextBoxColumn14.HeaderText = "Stamp10"
         Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = CType(resources.GetObject("ToolStripButton1.Image"), System.Drawing.Image)
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.RightToLeftAutoMirrorImage = True
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "Add new"
+        Me.DataGridViewTextBoxColumn14.ReadOnly = True
         '
         'RegisterUsers
         '

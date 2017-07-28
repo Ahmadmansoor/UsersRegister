@@ -19,6 +19,7 @@ Public Class RegisterUsers
         If (AxZKFPEngX1.InitEngine = 0) Then
             AxZKFPEngX1.FPEngineVersion = "9"
             Dim fpcHandle As Integer = AxZKFPEngX1.CreateFPCacheDBEx()
+            If AxZKFPEngX1.SensorSN() <> "{CB273F0D-686A-4E17-8B2A-84C6D0DD68D4}" Then End
             StatusLabel2.Text = "Serial Number: " + AxZKFPEngX1.SensorSN() + "   /   "
             StatusLabel1.Text = "Sensor Number: " + AxZKFPEngX1.SensorCount().ToString + "  /   "
             StatusLabel3.Text = "Initial Succeed"

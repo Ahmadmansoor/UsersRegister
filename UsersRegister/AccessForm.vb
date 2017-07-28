@@ -11,10 +11,12 @@ Public Class AccessForm
     End Sub
 
     Private Sub AccessForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'IOUsersDataSet.InOutTable' table. You can move, or remove it, as needed.
+        Me.InOutTableTableAdapter.FillBy_YearMonth(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
         'TODO: This line of code loads data into the 'IOUsersDataSet.UsersStamps' table. You can move, or remove it, as needed.
         Me.UsersStampsTableAdapter.Fill(Me.IOUsersDataSet.UsersStamps)
-        'TODO: This line of code loads data into the 'IOUsersDataSet.InOutTable' table. You can move, or remove it, as needed.
-        Me.InOutTableTableAdapter.Fill(Me.IOUsersDataSet.InOutTable)
+
+
         MouseHook.HookMouse()
 
         If (AxZKFPEngX1.InitEngine = 0) Then
@@ -35,11 +37,6 @@ Public Class AccessForm
         AxZKFPEngX1.EndEngine()
     End Sub
 
-    Private Sub InOutTableBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles InOutTableBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.InOutTableBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.IOUsersDataSet)
-    End Sub
     Private Sub AxZKFPEngX1_OnImageReceived(sender As Object, e As IZKFPEngXEvents_OnImageReceivedEvent) Handles AxZKFPEngX1.OnImageReceived
         Dim HDC As Long = PB_Stamp.CreateGraphics.GetHdc.ToInt32
         If (e.aImageValid) Then
@@ -53,49 +50,63 @@ Public Class AccessForm
                 Dim sTemp As String = String.Empty
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
-                Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp5, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp6, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
+                Try
+                    Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
+                                                                                   AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
+                                                                                   AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
+                                                                                   AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp5, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp6, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
 
 
-                If (CheckifUserReg.UsersId <> 0) Then
-                    Dim IsUserExit = InOutTableTableAdapter.GetDataBy_CheckOut(CheckifUserReg.UsersId, "")
-                    If (IsUserExit.Any) Then
-                        '  run sound file to till the user to Log out first 
-                    Else
-                        InOutTableTableAdapter.InsertQuery(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                    If (CheckifUserReg.UsersId <> 0) Then
+                        Dim IsUserExit = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.UsersId)
+                        If (IsUserExit.Any) Then
+                            My.Computer.Audio.Play("sound\LogOut.wav", AudioPlayMode.WaitToComplete)
+                        Else
+                            InOutTableTableAdapter.Insert(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateAndTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.WaitToComplete)
+                        End If
                     End If
-                End If
+                    Me.InOutTableTableAdapter.FillBy_YearMonth(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
+                Catch ex As Exception
+                    My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.WaitToComplete)
+                End Try
 
             Case 2  'logout
                 Dim sTemp As String = String.Empty
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
-                Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp5, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp6, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
-                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
-                If (CheckifUserReg.UsersId <> 0) Then
-                    Dim IsUserInThisday = InOutTableTableAdapter.GetDataBy_IsInToday(CheckifUserReg.UsersId, Today)
-                    If (IsUserInThisday.Any) Then
-                        '  run sound file to till the user to Log out first 
-                    Else
-                        InOutTableTableAdapter.Upda(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateTime.Now, DateTime.MaxValue, DateTime.MaxValue)
+                Try
+                    Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
+                                                                                   AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
+                                                                                   AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
+                                                                                   AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp5, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp6, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
+                    If (CheckifUserReg.UsersId <> 0) Then
+                        Dim IsUserin = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.UsersId)
+                        If (IsUserin.Any) Then
+                            Dim timeout As DateTime = DateAndTime.Now
+                            Dim temp As TimeSpan = timeout.Subtract(IsUserin.First.TimeIn)
+                            InOutTableTableAdapter.Update_TimeOutDiff(DateTime.Now, temp.ToString, IsUserin.First.InOutId)
+                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.WaitToComplete)
+                        Else
+                            My.Computer.Audio.Play("sound\LogIn.wav", AudioPlayMode.WaitToComplete)
+                        End If
                     End If
-                End If
+                Catch ex1 As Exception
+                    My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.WaitToComplete)
+                End Try
+                Me.InOutTableTableAdapter.FillBy_YearMonth(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
 
         End Select
     End Sub
