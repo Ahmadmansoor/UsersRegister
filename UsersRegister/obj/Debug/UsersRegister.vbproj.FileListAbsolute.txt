@@ -46,6 +46,14 @@ D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\AccessForm\AccessForm.pdb
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\AccessForm\AccessForm.xml
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\AccessForm\Interop.ZKFPEngXControl.dll
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\AccessForm\AxInterop.ZKFPEngXControl.dll
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\AccessForm.exe
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\AccessForm.xml
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\AccessForm.pdb
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\Report\Report.exe.config
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\Report\Report.exe
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\Report\Report.pdb
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\Report\Report.xml
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\Report\Interop.ZKFPEngXControl.dll
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\Report\AxInterop.ZKFPEngXControl.dll
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\UsersRegister.vbprojResolveAssemblyReference.cache
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\UsersRegister.ReportForm.resources
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\Report.exe
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\Report.xml
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\Report.pdb

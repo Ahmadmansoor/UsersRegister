@@ -8,11 +8,12 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>UsersRegister.My.MyApplication</StartupObject>
     <RootNamespace>UsersRegister</RootNamespace>
-    <AssemblyName>AccessForm</AssemblyName>
+    <AssemblyName>Report</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -35,10 +35,10 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\AccessForm\</OutputPath>
-    <DocumentationFile>AccessForm.xml</DocumentationFile>
+    <OutputPath>bin\Debug\Report\</OutputPath>
+    <DocumentationFile>Report.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,7 +47,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>AccessForm.xml</DocumentationFile>
+    <DocumentationFile>Report.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -159,6 +159,7 @@
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportInOutUsers.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="IOUsersDataSet.xsc">
@@ -208,12 +209,9 @@
   <ItemGroup>
     <None Include="error.png" />
     <Content Include="users-add-user-icon.ico" />
-    <Content Include="UsersDataBase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="UsersDataBase.mdf" />
     <Content Include="UsersDataBase_log.ldf">
       <DependentUpon>UsersDataBase.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

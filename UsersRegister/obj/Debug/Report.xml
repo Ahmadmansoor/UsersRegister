@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-AccessForm
+Report
 </name>
 </assembly>
 <members>
@@ -114,6 +114,91 @@ Used to sort self-referenced table's rows
 </member>
 <member name="F:UsersRegister.PublicInOutVar.In_Out_Time">
  <summary> check if user logout or login 1=LogIn 2=Logout</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet.InOutTableDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet.UsersStampsDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet.InOutTableRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet.UsersStampsRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet.InOutTableRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSet.UsersStampsRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSetTableAdapters.InOutTableTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSetTableAdapters.UsersStampsTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(UsersRegister.ReprotDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(UsersRegister.ReprotDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(UsersRegister.ReprotDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.UpdateAll(UsersRegister.ReprotDataSet)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:UsersRegister.ReprotDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
 </member>
 <member name="T:UsersRegister.UsersDataBaseDataSet2">
 <summary>
