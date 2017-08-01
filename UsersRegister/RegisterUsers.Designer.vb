@@ -131,7 +131,7 @@ Partial Class RegisterUsers
         'UserNameLabel
         '
         UserNameLabel.AutoSize = True
-        UserNameLabel.Location = New System.Drawing.Point(104, 36)
+        UserNameLabel.Location = New System.Drawing.Point(102, 30)
         UserNameLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         UserNameLabel.Name = "UserNameLabel"
         UserNameLabel.Size = New System.Drawing.Size(90, 18)
@@ -141,7 +141,7 @@ Partial Class RegisterUsers
         'SectionLabel
         '
         SectionLabel.AutoSize = True
-        SectionLabel.Location = New System.Drawing.Point(36, 100)
+        SectionLabel.Location = New System.Drawing.Point(34, 94)
         SectionLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         SectionLabel.Name = "SectionLabel"
         SectionLabel.Size = New System.Drawing.Size(66, 18)
@@ -151,7 +151,7 @@ Partial Class RegisterUsers
         'MobileLabel
         '
         MobileLabel.AutoSize = True
-        MobileLabel.Location = New System.Drawing.Point(283, 100)
+        MobileLabel.Location = New System.Drawing.Point(281, 94)
         MobileLabel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         MobileLabel.Name = "MobileLabel"
         MobileLabel.Size = New System.Drawing.Size(60, 18)
@@ -161,7 +161,7 @@ Partial Class RegisterUsers
         'Stamp1Label
         '
         Stamp1Label.AutoSize = True
-        Stamp1Label.Location = New System.Drawing.Point(9, 21)
+        Stamp1Label.Location = New System.Drawing.Point(9, 33)
         Stamp1Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp1Label.Name = "Stamp1Label"
         Stamp1Label.Size = New System.Drawing.Size(64, 18)
@@ -171,7 +171,7 @@ Partial Class RegisterUsers
         'Stamp2Label
         '
         Stamp2Label.AutoSize = True
-        Stamp2Label.Location = New System.Drawing.Point(9, 57)
+        Stamp2Label.Location = New System.Drawing.Point(9, 69)
         Stamp2Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp2Label.Name = "Stamp2Label"
         Stamp2Label.Size = New System.Drawing.Size(64, 18)
@@ -181,7 +181,7 @@ Partial Class RegisterUsers
         'Stamp3Label
         '
         Stamp3Label.AutoSize = True
-        Stamp3Label.Location = New System.Drawing.Point(9, 93)
+        Stamp3Label.Location = New System.Drawing.Point(9, 105)
         Stamp3Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp3Label.Name = "Stamp3Label"
         Stamp3Label.Size = New System.Drawing.Size(64, 18)
@@ -191,7 +191,7 @@ Partial Class RegisterUsers
         'Stamp4Label
         '
         Stamp4Label.AutoSize = True
-        Stamp4Label.Location = New System.Drawing.Point(9, 129)
+        Stamp4Label.Location = New System.Drawing.Point(9, 141)
         Stamp4Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp4Label.Name = "Stamp4Label"
         Stamp4Label.Size = New System.Drawing.Size(64, 18)
@@ -201,7 +201,7 @@ Partial Class RegisterUsers
         'Stamp5Label
         '
         Stamp5Label.AutoSize = True
-        Stamp5Label.Location = New System.Drawing.Point(9, 165)
+        Stamp5Label.Location = New System.Drawing.Point(9, 177)
         Stamp5Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp5Label.Name = "Stamp5Label"
         Stamp5Label.Size = New System.Drawing.Size(64, 18)
@@ -211,7 +211,7 @@ Partial Class RegisterUsers
         'Stamp6Label
         '
         Stamp6Label.AutoSize = True
-        Stamp6Label.Location = New System.Drawing.Point(333, 21)
+        Stamp6Label.Location = New System.Drawing.Point(333, 33)
         Stamp6Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp6Label.Name = "Stamp6Label"
         Stamp6Label.Size = New System.Drawing.Size(64, 18)
@@ -221,7 +221,7 @@ Partial Class RegisterUsers
         'Stamp7Label
         '
         Stamp7Label.AutoSize = True
-        Stamp7Label.Location = New System.Drawing.Point(333, 57)
+        Stamp7Label.Location = New System.Drawing.Point(333, 69)
         Stamp7Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp7Label.Name = "Stamp7Label"
         Stamp7Label.Size = New System.Drawing.Size(64, 18)
@@ -231,7 +231,7 @@ Partial Class RegisterUsers
         'Stamp8Label
         '
         Stamp8Label.AutoSize = True
-        Stamp8Label.Location = New System.Drawing.Point(333, 93)
+        Stamp8Label.Location = New System.Drawing.Point(333, 105)
         Stamp8Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp8Label.Name = "Stamp8Label"
         Stamp8Label.Size = New System.Drawing.Size(64, 18)
@@ -241,7 +241,7 @@ Partial Class RegisterUsers
         'Stamp9Label
         '
         Stamp9Label.AutoSize = True
-        Stamp9Label.Location = New System.Drawing.Point(333, 129)
+        Stamp9Label.Location = New System.Drawing.Point(333, 141)
         Stamp9Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp9Label.Name = "Stamp9Label"
         Stamp9Label.Size = New System.Drawing.Size(64, 18)
@@ -251,7 +251,7 @@ Partial Class RegisterUsers
         'Stamp10Label
         '
         Stamp10Label.AutoSize = True
-        Stamp10Label.Location = New System.Drawing.Point(333, 165)
+        Stamp10Label.Location = New System.Drawing.Point(333, 177)
         Stamp10Label.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Stamp10Label.Name = "Stamp10Label"
         Stamp10Label.Size = New System.Drawing.Size(72, 18)
@@ -261,7 +261,7 @@ Partial Class RegisterUsers
         'DesignationLabel
         '
         DesignationLabel.AutoSize = True
-        DesignationLabel.Location = New System.Drawing.Point(199, 68)
+        DesignationLabel.Location = New System.Drawing.Point(197, 62)
         DesignationLabel.Name = "DesignationLabel"
         DesignationLabel.Size = New System.Drawing.Size(97, 18)
         DesignationLabel.TabIndex = 10
@@ -270,7 +270,7 @@ Partial Class RegisterUsers
         'CodeLabel1
         '
         CodeLabel1.AutoSize = True
-        CodeLabel1.Location = New System.Drawing.Point(37, 68)
+        CodeLabel1.Location = New System.Drawing.Point(35, 62)
         CodeLabel1.Name = "CodeLabel1"
         CodeLabel1.Size = New System.Drawing.Size(50, 18)
         CodeLabel1.TabIndex = 11
@@ -279,7 +279,7 @@ Partial Class RegisterUsers
         'UsersStampsBindingNavigator
         '
         Me.UsersStampsBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.UsersStampsBindingNavigator.BackColor = System.Drawing.SystemColors.AppWorkspace
+        Me.UsersStampsBindingNavigator.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.UsersStampsBindingNavigator.BindingSource = Me.UsersStampsBindingSource
         Me.UsersStampsBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.UsersStampsBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
@@ -292,7 +292,7 @@ Partial Class RegisterUsers
         Me.UsersStampsBindingNavigator.Name = "UsersStampsBindingNavigator"
         Me.UsersStampsBindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.UsersStampsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(542, 25)
+        Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(540, 25)
         Me.UsersStampsBindingNavigator.TabIndex = 0
         Me.UsersStampsBindingNavigator.Text = "BindingNavigator1"
         '
@@ -412,7 +412,7 @@ Partial Class RegisterUsers
         'UsersIdTextBox
         '
         Me.UsersIdTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "UsersId", True))
-        Me.UsersIdTextBox.Location = New System.Drawing.Point(49, 33)
+        Me.UsersIdTextBox.Location = New System.Drawing.Point(47, 27)
         Me.UsersIdTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.UsersIdTextBox.Name = "UsersIdTextBox"
         Me.UsersIdTextBox.ReadOnly = True
@@ -422,7 +422,7 @@ Partial Class RegisterUsers
         'UserNameTextBox
         '
         Me.UserNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "UserName", True))
-        Me.UserNameTextBox.Location = New System.Drawing.Point(202, 33)
+        Me.UserNameTextBox.Location = New System.Drawing.Point(200, 27)
         Me.UserNameTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.UserNameTextBox.Name = "UserNameTextBox"
         Me.UserNameTextBox.Size = New System.Drawing.Size(293, 25)
@@ -431,7 +431,7 @@ Partial Class RegisterUsers
         'SectionTextBox
         '
         Me.SectionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Section", True))
-        Me.SectionTextBox.Location = New System.Drawing.Point(108, 97)
+        Me.SectionTextBox.Location = New System.Drawing.Point(106, 91)
         Me.SectionTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SectionTextBox.Name = "SectionTextBox"
         Me.SectionTextBox.Size = New System.Drawing.Size(167, 25)
@@ -440,7 +440,7 @@ Partial Class RegisterUsers
         'MobileTextBox
         '
         Me.MobileTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Mobile", True))
-        Me.MobileTextBox.Location = New System.Drawing.Point(351, 97)
+        Me.MobileTextBox.Location = New System.Drawing.Point(349, 91)
         Me.MobileTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.MobileTextBox.Name = "MobileTextBox"
         Me.MobileTextBox.Size = New System.Drawing.Size(143, 25)
@@ -449,7 +449,7 @@ Partial Class RegisterUsers
         'Stamp1TextBox
         '
         Me.Stamp1TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp1", True))
-        Me.Stamp1TextBox.Location = New System.Drawing.Point(81, 18)
+        Me.Stamp1TextBox.Location = New System.Drawing.Point(81, 30)
         Me.Stamp1TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp1TextBox.Name = "Stamp1TextBox"
         Me.Stamp1TextBox.Size = New System.Drawing.Size(106, 25)
@@ -458,7 +458,7 @@ Partial Class RegisterUsers
         'Stamp2TextBox
         '
         Me.Stamp2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp2", True))
-        Me.Stamp2TextBox.Location = New System.Drawing.Point(81, 54)
+        Me.Stamp2TextBox.Location = New System.Drawing.Point(81, 66)
         Me.Stamp2TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp2TextBox.Name = "Stamp2TextBox"
         Me.Stamp2TextBox.Size = New System.Drawing.Size(106, 25)
@@ -467,7 +467,7 @@ Partial Class RegisterUsers
         'Stamp3TextBox
         '
         Me.Stamp3TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp3", True))
-        Me.Stamp3TextBox.Location = New System.Drawing.Point(81, 90)
+        Me.Stamp3TextBox.Location = New System.Drawing.Point(81, 102)
         Me.Stamp3TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp3TextBox.Name = "Stamp3TextBox"
         Me.Stamp3TextBox.Size = New System.Drawing.Size(106, 25)
@@ -476,7 +476,7 @@ Partial Class RegisterUsers
         'Stamp4TextBox
         '
         Me.Stamp4TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp4", True))
-        Me.Stamp4TextBox.Location = New System.Drawing.Point(81, 126)
+        Me.Stamp4TextBox.Location = New System.Drawing.Point(81, 138)
         Me.Stamp4TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp4TextBox.Name = "Stamp4TextBox"
         Me.Stamp4TextBox.Size = New System.Drawing.Size(106, 25)
@@ -485,7 +485,7 @@ Partial Class RegisterUsers
         'Stamp5TextBox
         '
         Me.Stamp5TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp5", True))
-        Me.Stamp5TextBox.Location = New System.Drawing.Point(81, 162)
+        Me.Stamp5TextBox.Location = New System.Drawing.Point(81, 174)
         Me.Stamp5TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp5TextBox.Name = "Stamp5TextBox"
         Me.Stamp5TextBox.Size = New System.Drawing.Size(106, 25)
@@ -494,7 +494,7 @@ Partial Class RegisterUsers
         'Stamp6TextBox
         '
         Me.Stamp6TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp6", True))
-        Me.Stamp6TextBox.Location = New System.Drawing.Point(405, 18)
+        Me.Stamp6TextBox.Location = New System.Drawing.Point(405, 30)
         Me.Stamp6TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp6TextBox.Name = "Stamp6TextBox"
         Me.Stamp6TextBox.Size = New System.Drawing.Size(106, 25)
@@ -503,7 +503,7 @@ Partial Class RegisterUsers
         'Stamp7TextBox
         '
         Me.Stamp7TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp7", True))
-        Me.Stamp7TextBox.Location = New System.Drawing.Point(405, 54)
+        Me.Stamp7TextBox.Location = New System.Drawing.Point(405, 66)
         Me.Stamp7TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp7TextBox.Name = "Stamp7TextBox"
         Me.Stamp7TextBox.Size = New System.Drawing.Size(106, 25)
@@ -512,7 +512,7 @@ Partial Class RegisterUsers
         'Stamp8TextBox
         '
         Me.Stamp8TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp8", True))
-        Me.Stamp8TextBox.Location = New System.Drawing.Point(405, 90)
+        Me.Stamp8TextBox.Location = New System.Drawing.Point(405, 102)
         Me.Stamp8TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp8TextBox.Name = "Stamp8TextBox"
         Me.Stamp8TextBox.Size = New System.Drawing.Size(106, 25)
@@ -521,7 +521,7 @@ Partial Class RegisterUsers
         'Stamp9TextBox
         '
         Me.Stamp9TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp9", True))
-        Me.Stamp9TextBox.Location = New System.Drawing.Point(405, 126)
+        Me.Stamp9TextBox.Location = New System.Drawing.Point(405, 138)
         Me.Stamp9TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp9TextBox.Name = "Stamp9TextBox"
         Me.Stamp9TextBox.Size = New System.Drawing.Size(106, 25)
@@ -530,7 +530,7 @@ Partial Class RegisterUsers
         'Stamp10TextBox
         '
         Me.Stamp10TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp10", True))
-        Me.Stamp10TextBox.Location = New System.Drawing.Point(405, 162)
+        Me.Stamp10TextBox.Location = New System.Drawing.Point(405, 174)
         Me.Stamp10TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp10TextBox.Name = "Stamp10TextBox"
         Me.Stamp10TextBox.Size = New System.Drawing.Size(106, 25)
@@ -551,7 +551,7 @@ Partial Class RegisterUsers
         Me.GroupBox1.Controls.Add(Me.UsersIdTextBox)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 28)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(519, 141)
+        Me.GroupBox1.Size = New System.Drawing.Size(519, 130)
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Basic Info"
@@ -559,7 +559,7 @@ Partial Class RegisterUsers
         'CodeTextBox
         '
         Me.CodeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Code", True))
-        Me.CodeTextBox.Location = New System.Drawing.Point(94, 65)
+        Me.CodeTextBox.Location = New System.Drawing.Point(92, 59)
         Me.CodeTextBox.Name = "CodeTextBox"
         Me.CodeTextBox.Size = New System.Drawing.Size(100, 25)
         Me.CodeTextBox.TabIndex = 12
@@ -569,7 +569,7 @@ Partial Class RegisterUsers
         Me.DesignationComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Designation", True))
         Me.DesignationComboBox.FormattingEnabled = True
         Me.DesignationComboBox.Items.AddRange(New Object() {" project manager ", " welder ", " helper ", " driver ", " carpenter ", " engineer ", " electricion ", " Civil Eng. ", " Foreman ", " Draft man ", " Accountant "})
-        Me.DesignationComboBox.Location = New System.Drawing.Point(302, 65)
+        Me.DesignationComboBox.Location = New System.Drawing.Point(300, 59)
         Me.DesignationComboBox.Name = "DesignationComboBox"
         Me.DesignationComboBox.Size = New System.Drawing.Size(192, 26)
         Me.DesignationComboBox.TabIndex = 11
@@ -608,16 +608,16 @@ Partial Class RegisterUsers
         Me.GroupBox2.Controls.Add(Me.Stamp10TextBox)
         Me.GroupBox2.Controls.Add(Me.Stamp2TextBox)
         Me.GroupBox2.Controls.Add(Stamp3Label)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 175)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 164)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(519, 260)
+        Me.GroupBox2.Size = New System.Drawing.Size(519, 251)
         Me.GroupBox2.TabIndex = 31
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Stamps Area"
         '
         'Bu_Ver
         '
-        Me.Bu_Ver.Location = New System.Drawing.Point(269, 194)
+        Me.Bu_Ver.Location = New System.Drawing.Point(269, 206)
         Me.Bu_Ver.Name = "Bu_Ver"
         Me.Bu_Ver.Size = New System.Drawing.Size(146, 34)
         Me.Bu_Ver.TabIndex = 36
@@ -626,8 +626,8 @@ Partial Class RegisterUsers
         '
         'PB_finger
         '
-        Me.PB_finger.Image = Global.UsersRegister.My.Resources.Resources._error
-        Me.PB_finger.Location = New System.Drawing.Point(194, 53)
+        Me.PB_finger.Image = Global.UsersRegister.My.Resources.Resources.error_
+        Me.PB_finger.Location = New System.Drawing.Point(194, 65)
         Me.PB_finger.Name = "PB_finger"
         Me.PB_finger.Size = New System.Drawing.Size(132, 98)
         Me.PB_finger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -636,7 +636,7 @@ Partial Class RegisterUsers
         '
         'Bu_Reg
         '
-        Me.Bu_Reg.Location = New System.Drawing.Point(117, 194)
+        Me.Bu_Reg.Location = New System.Drawing.Point(117, 206)
         Me.Bu_Reg.Name = "Bu_Reg"
         Me.Bu_Reg.Size = New System.Drawing.Size(146, 34)
         Me.Bu_Reg.TabIndex = 35
@@ -648,9 +648,9 @@ Partial Class RegisterUsers
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusLabel3, Me.StatusLabel1, Me.StatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 643)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 630)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(542, 26)
+        Me.StatusStrip1.Size = New System.Drawing.Size(540, 26)
         Me.StatusStrip1.TabIndex = 33
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -686,7 +686,7 @@ Partial Class RegisterUsers
         Me.UsersStampsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsersStampsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Code, Me.UserName, Me.Designation, Me.BasicSalary, Me.Section, Me.Mobile, Me.Stamp1, Me.Stamp2, Me.Stamp3, Me.Stamp4, Me.Stamp5, Me.Stamp6, Me.Stamp7, Me.Stamp8, Me.Stamp9, Me.Stamp10})
         Me.UsersStampsDataGridView.DataSource = Me.UsersStampsBindingSource
-        Me.UsersStampsDataGridView.Location = New System.Drawing.Point(12, 441)
+        Me.UsersStampsDataGridView.Location = New System.Drawing.Point(12, 423)
         Me.UsersStampsDataGridView.Name = "UsersStampsDataGridView"
         Me.UsersStampsDataGridView.ReadOnly = True
         Me.UsersStampsDataGridView.Size = New System.Drawing.Size(519, 204)
@@ -827,7 +827,7 @@ Partial Class RegisterUsers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(542, 669)
+        Me.ClientSize = New System.Drawing.Size(540, 656)
         Me.Controls.Add(Me.UsersStampsDataGridView)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox2)

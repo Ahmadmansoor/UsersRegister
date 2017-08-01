@@ -66,15 +66,15 @@ Public Class AccessForm
                     If (CheckifUserReg.UsersId <> 0) Then
                         Dim IsUserExit = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.UsersId)
                         If (IsUserExit.Any) Then
-                            My.Computer.Audio.Play("sound\LogOut.wav", AudioPlayMode.WaitToComplete)
+                            My.Computer.Audio.Play("sound\LogOut.wav", AudioPlayMode.Background)
                         Else
                             InOutTableTableAdapter.Insert(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateAndTime.Now, DateTime.MaxValue, DateTime.MaxValue)
-                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.WaitToComplete)
+                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.Background)
                         End If
                     End If
                     Me.InOutTableTableAdapter.FillBy_YearMonth(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
                 Catch ex As Exception
-                    My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.WaitToComplete)
+                    My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.Background)
                 End Try
 
             Case 2  'logout
@@ -98,13 +98,13 @@ Public Class AccessForm
                             Dim timeout As DateTime = DateAndTime.Now
                             Dim temp As TimeSpan = timeout.Subtract(IsUserin.First.TimeIn)
                             InOutTableTableAdapter.Update_TimeOutDiff(DateTime.Now, temp.ToString, IsUserin.First.InOutId)
-                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.WaitToComplete)
+                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.Background)
                         Else
-                            My.Computer.Audio.Play("sound\LogIn.wav", AudioPlayMode.WaitToComplete)
+                            My.Computer.Audio.Play("sound\LogIn.wav", AudioPlayMode.Background)
                         End If
                     End If
                 Catch ex1 As Exception
-                    My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.WaitToComplete)
+                    My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.Background)
                 End Try
                 Me.InOutTableTableAdapter.FillBy_YearMonth(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
 

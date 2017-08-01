@@ -45,6 +45,8 @@ Public Class Hook
             In_Out_Time = 1
         ElseIf wParam.ToInt32 = 516 Then
             In_Out_Time = 2
+        ElseIf wParam.ToInt32 = 519 Then
+            In_Out_Time = 3
         End If
         Return CallNextHookEx(WH_MOUSE_LL, nCode, wParam, lParam)
     End Function

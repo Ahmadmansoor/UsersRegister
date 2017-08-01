@@ -111,7 +111,7 @@ Partial Class AccessForm
         'PB_Stamp
         '
         Me.PB_Stamp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.PB_Stamp.BackgroundImage = Global.UsersRegister.My.Resources.Resources._error
+        Me.PB_Stamp.BackgroundImage = Global.UsersRegister.My.Resources.Resources.error_
         Me.PB_Stamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PB_Stamp.Location = New System.Drawing.Point(1014, 615)
         Me.PB_Stamp.Name = "PB_Stamp"
