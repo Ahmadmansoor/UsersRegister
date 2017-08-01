@@ -285,7 +285,13 @@ Partial Public Class UsersDataBaseDataSet2
         
         Private columnUsersId As Global.System.Data.DataColumn
         
+        Private columnCode As Global.System.Data.DataColumn
+        
         Private columnUserName As Global.System.Data.DataColumn
+        
+        Private columnDesignation As Global.System.Data.DataColumn
+        
+        Private columnBasicSalary As Global.System.Data.DataColumn
         
         Private columnSection As Global.System.Data.DataColumn
         
@@ -356,9 +362,33 @@ Partial Public Class UsersDataBaseDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CodeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCode
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property UserNameColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnUserName
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DesignationColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDesignation
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property BasicSalaryColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnBasicSalary
             End Get
         End Property
         
@@ -495,9 +525,25 @@ Partial Public Class UsersDataBaseDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddUsersStampsRow(ByVal UserName As String, ByVal Section As String, ByVal Mobile As String, ByVal Stamp1 As String, ByVal Stamp2 As String, ByVal Stamp3 As String, ByVal Stamp4 As String, ByVal Stamp5 As String, ByVal Stamp6 As String, ByVal Stamp7 As String, ByVal Stamp8 As String, ByVal Stamp9 As String, ByVal Stamp10 As String) As UsersStampsRow
+        Public Overloads Function AddUsersStampsRow( _
+                    ByVal Code As String,  _
+                    ByVal UserName As String,  _
+                    ByVal Designation As String,  _
+                    ByVal BasicSalary As Decimal,  _
+                    ByVal Section As String,  _
+                    ByVal Mobile As String,  _
+                    ByVal Stamp1 As String,  _
+                    ByVal Stamp2 As String,  _
+                    ByVal Stamp3 As String,  _
+                    ByVal Stamp4 As String,  _
+                    ByVal Stamp5 As String,  _
+                    ByVal Stamp6 As String,  _
+                    ByVal Stamp7 As String,  _
+                    ByVal Stamp8 As String,  _
+                    ByVal Stamp9 As String,  _
+                    ByVal Stamp10 As String) As UsersStampsRow
             Dim rowUsersStampsRow As UsersStampsRow = CType(Me.NewRow,UsersStampsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, UserName, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stamp8, Stamp9, Stamp10}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Code, UserName, Designation, BasicSalary, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stamp8, Stamp9, Stamp10}
             rowUsersStampsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowUsersStampsRow)
             Return rowUsersStampsRow
@@ -527,7 +573,10 @@ Partial Public Class UsersDataBaseDataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnUsersId = MyBase.Columns("UsersId")
+            Me.columnCode = MyBase.Columns("Code")
             Me.columnUserName = MyBase.Columns("UserName")
+            Me.columnDesignation = MyBase.Columns("Designation")
+            Me.columnBasicSalary = MyBase.Columns("BasicSalary")
             Me.columnSection = MyBase.Columns("Section")
             Me.columnMobile = MyBase.Columns("Mobile")
             Me.columnStamp1 = MyBase.Columns("Stamp1")
@@ -547,8 +596,14 @@ Partial Public Class UsersDataBaseDataSet2
         Private Sub InitClass()
             Me.columnUsersId = New Global.System.Data.DataColumn("UsersId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUsersId)
+            Me.columnCode = New Global.System.Data.DataColumn("Code", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCode)
             Me.columnUserName = New Global.System.Data.DataColumn("UserName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUserName)
+            Me.columnDesignation = New Global.System.Data.DataColumn("Designation", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDesignation)
+            Me.columnBasicSalary = New Global.System.Data.DataColumn("BasicSalary", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnBasicSalary)
             Me.columnSection = New Global.System.Data.DataColumn("Section", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnSection)
             Me.columnMobile = New Global.System.Data.DataColumn("Mobile", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -580,7 +635,9 @@ Partial Public Class UsersDataBaseDataSet2
             Me.columnUsersId.AllowDBNull = false
             Me.columnUsersId.ReadOnly = true
             Me.columnUsersId.Unique = true
+            Me.columnCode.MaxLength = 200
             Me.columnUserName.MaxLength = 200
+            Me.columnDesignation.MaxLength = 2147483647
             Me.columnSection.MaxLength = 200
             Me.columnMobile.MaxLength = 15
             Me.columnStamp1.MaxLength = 2147483647
@@ -750,6 +807,21 @@ Partial Public Class UsersDataBaseDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Code() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableUsersStamps.CodeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Code' in table 'UsersStamps' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableUsersStamps.CodeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property UserName() As String
             Get
                 Try 
@@ -760,6 +832,36 @@ Partial Public Class UsersDataBaseDataSet2
             End Get
             Set
                 Me(Me.tableUsersStamps.UserNameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property Designation() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableUsersStamps.DesignationColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Designation' in table 'UsersStamps' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableUsersStamps.DesignationColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property BasicSalary() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableUsersStamps.BasicSalaryColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'BasicSalary' in table 'UsersStamps' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableUsersStamps.BasicSalaryColumn) = value
             End Set
         End Property
         
@@ -945,6 +1047,18 @@ Partial Public Class UsersDataBaseDataSet2
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCodeNull() As Boolean
+            Return Me.IsNull(Me.tableUsersStamps.CodeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCodeNull()
+            Me(Me.tableUsersStamps.CodeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsUserNameNull() As Boolean
             Return Me.IsNull(Me.tableUsersStamps.UserNameColumn)
         End Function
@@ -953,6 +1067,30 @@ Partial Public Class UsersDataBaseDataSet2
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetUserNameNull()
             Me(Me.tableUsersStamps.UserNameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsDesignationNull() As Boolean
+            Return Me.IsNull(Me.tableUsersStamps.DesignationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetDesignationNull()
+            Me(Me.tableUsersStamps.DesignationColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsBasicSalaryNull() As Boolean
+            Return Me.IsNull(Me.tableUsersStamps.BasicSalaryColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetBasicSalaryNull()
+            Me(Me.tableUsersStamps.BasicSalaryColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1267,7 +1405,10 @@ Namespace UsersDataBaseDataSet2TableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "UsersStamps"
             tableMapping.ColumnMappings.Add("UsersId", "UsersId")
+            tableMapping.ColumnMappings.Add("Code", "Code")
             tableMapping.ColumnMappings.Add("UserName", "UserName")
+            tableMapping.ColumnMappings.Add("Designation", "Designation")
+            tableMapping.ColumnMappings.Add("BasicSalary", "BasicSalary")
             tableMapping.ColumnMappings.Add("Section", "Section")
             tableMapping.ColumnMappings.Add("Mobile", "Mobile")
             tableMapping.ColumnMappings.Add("Stamp1", "Stamp1")
@@ -1283,29 +1424,40 @@ Namespace UsersDataBaseDataSet2TableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[UsersStamps] WHERE (([UsersId] = @Original_UsersId) AND ((@IsN"& _ 
-                "ull_UserName = 1 AND [UserName] IS NULL) OR ([UserName] = @Original_UserName)) A"& _ 
-                "ND ((@IsNull_Section = 1 AND [Section] IS NULL) OR ([Section] = @Original_Sectio"& _ 
-                "n)) AND ((@IsNull_Mobile = 1 AND [Mobile] IS NULL) OR ([Mobile] = @Original_Mobi"& _ 
-                "le)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [UsersStamps] WHERE (([UsersId] = @Original_UsersId) AND ((@IsNull_Co"& _ 
+                "de = 1 AND [Code] IS NULL) OR ([Code] = @Original_Code)) AND ((@IsNull_UserName "& _ 
+                "= 1 AND [UserName] IS NULL) OR ([UserName] = @Original_UserName)) AND ((@IsNull_"& _ 
+                "BasicSalary = 1 AND [BasicSalary] IS NULL) OR ([BasicSalary] = @Original_BasicSa"& _ 
+                "lary)) AND ((@IsNull_Section = 1 AND [Section] IS NULL) OR ([Section] = @Origina"& _ 
+                "l_Section)) AND ((@IsNull_Mobile = 1 AND [Mobile] IS NULL) OR ([Mobile] = @Origi"& _ 
+                "nal_Mobile)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UsersId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UsersId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Code", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Code", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BasicSalary", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BasicSalary", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BasicSalary", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "BasicSalary", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Section", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Section", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Section", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Section", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Mobile", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Mobile", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Mobile", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Mobile", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[UsersStamps] ([UserName], [Section], [Mobile], [Stamp1], [Stam"& _ 
-                "p2], [Stamp3], [Stamp4], [Stamp5], [Stamp6], [Stamp7], [Stamp8], [Stamp9], [Stam"& _ 
-                "p10]) VALUES (@UserName, @Section, @Mobile, @Stamp1, @Stamp2, @Stamp3, @Stamp4, "& _ 
-                "@Stamp5, @Stamp6, @Stamp7, @Stamp8, @Stamp9, @Stamp10);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UsersId, UserNam"& _ 
-                "e, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stam"& _ 
-                "p8, Stamp9, Stamp10 FROM UsersStamps WHERE (UsersId = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [UsersStamps] ([Code], [UserName], [Designation], [BasicSalary], [Sec"& _ 
+                "tion], [Mobile], [Stamp1], [Stamp2], [Stamp3], [Stamp4], [Stamp5], [Stamp6], [St"& _ 
+                "amp7], [Stamp8], [Stamp9], [Stamp10]) VALUES (@Code, @UserName, @Designation, @B"& _ 
+                "asicSalary, @Section, @Mobile, @Stamp1, @Stamp2, @Stamp3, @Stamp4, @Stamp5, @Sta"& _ 
+                "mp6, @Stamp7, @Stamp8, @Stamp9, @Stamp10);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UsersId, Code, UserName, Desi"& _ 
+                "gnation, BasicSalary, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, S"& _ 
+                "tamp6, Stamp7, Stamp8, Stamp9, Stamp10 FROM UsersStamps WHERE (UsersId = SCOPE_I"& _ 
+                "DENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Code", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Designation", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Designation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BasicSalary", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "BasicSalary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Section", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Section", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Mobile", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Mobile", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Stamp1", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Stamp1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1320,18 +1472,24 @@ Namespace UsersDataBaseDataSet2TableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Stamp10", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Stamp10", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[UsersStamps] SET [UserName] = @UserName, [Section] = @Section, [Mob"& _ 
-                "ile] = @Mobile, [Stamp1] = @Stamp1, [Stamp2] = @Stamp2, [Stamp3] = @Stamp3, [Sta"& _ 
-                "mp4] = @Stamp4, [Stamp5] = @Stamp5, [Stamp6] = @Stamp6, [Stamp7] = @Stamp7, [Sta"& _ 
-                "mp8] = @Stamp8, [Stamp9] = @Stamp9, [Stamp10] = @Stamp10 WHERE (([UsersId] = @Or"& _ 
-                "iginal_UsersId) AND ((@IsNull_UserName = 1 AND [UserName] IS NULL) OR ([UserName"& _ 
-                "] = @Original_UserName)) AND ((@IsNull_Section = 1 AND [Section] IS NULL) OR ([S"& _ 
-                "ection] = @Original_Section)) AND ((@IsNull_Mobile = 1 AND [Mobile] IS NULL) OR "& _ 
-                "([Mobile] = @Original_Mobile)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UsersId, UserName, Section, Mobile, Sta"& _ 
-                "mp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stamp8, Stamp9, Stamp10 FRO"& _ 
-                "M UsersStamps WHERE (UsersId = @UsersId)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [UsersStamps] SET [Code] = @Code, [UserName] = @UserName, [Designation] = "& _ 
+                "@Designation, [BasicSalary] = @BasicSalary, [Section] = @Section, [Mobile] = @Mo"& _ 
+                "bile, [Stamp1] = @Stamp1, [Stamp2] = @Stamp2, [Stamp3] = @Stamp3, [Stamp4] = @St"& _ 
+                "amp4, [Stamp5] = @Stamp5, [Stamp6] = @Stamp6, [Stamp7] = @Stamp7, [Stamp8] = @St"& _ 
+                "amp8, [Stamp9] = @Stamp9, [Stamp10] = @Stamp10 WHERE (([UsersId] = @Original_Use"& _ 
+                "rsId) AND ((@IsNull_Code = 1 AND [Code] IS NULL) OR ([Code] = @Original_Code)) A"& _ 
+                "ND ((@IsNull_UserName = 1 AND [UserName] IS NULL) OR ([UserName] = @Original_Use"& _ 
+                "rName)) AND ((@IsNull_BasicSalary = 1 AND [BasicSalary] IS NULL) OR ([BasicSalar"& _ 
+                "y] = @Original_BasicSalary)) AND ((@IsNull_Section = 1 AND [Section] IS NULL) OR"& _ 
+                " ([Section] = @Original_Section)) AND ((@IsNull_Mobile = 1 AND [Mobile] IS NULL)"& _ 
+                " OR ([Mobile] = @Original_Mobile)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT UsersId, Code, UserName, Designatio"& _ 
+                "n, BasicSalary, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6,"& _ 
+                " Stamp7, Stamp8, Stamp9, Stamp10 FROM UsersStamps WHERE (UsersId = @UsersId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Code", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@UserName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Designation", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Designation", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@BasicSalary", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "BasicSalary", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Section", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Section", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Mobile", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Mobile", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Stamp1", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Stamp1", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -1345,8 +1503,12 @@ Namespace UsersDataBaseDataSet2TableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Stamp9", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Stamp9", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Stamp10", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Stamp10", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UsersId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UsersId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Code", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Code", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Code", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_UserName", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_UserName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "UserName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_BasicSalary", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "BasicSalary", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_BasicSalary", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 18, 2, "BasicSalary", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Section", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Section", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Section", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Section", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Mobile", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Mobile", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -1367,8 +1529,9 @@ Namespace UsersDataBaseDataSet2TableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT UsersId, UserName, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5"& _ 
-                ", Stamp6, Stamp7, Stamp8, Stamp9, Stamp10 FROM dbo.UsersStamps"
+            Me._commandCollection(0).CommandText = "SELECT        UsersId, Code, UserName, Designation, BasicSalary, Section, Mobile,"& _ 
+                " Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stamp8, Stamp9, Stamp10"& _ 
+                ""&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            UsersStamps"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1428,28 +1591,42 @@ Namespace UsersDataBaseDataSet2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_UsersId As Integer, ByVal Original_UserName As String, ByVal Original_Section As String, ByVal Original_Mobile As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_UsersId As Integer, ByVal Original_Code As String, ByVal Original_UserName As String, ByVal Original_BasicSalary As Global.System.Nullable(Of Decimal), ByVal Original_Section As String, ByVal Original_Mobile As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_UsersId,Integer)
-            If (Original_UserName Is Nothing) Then
+            If (Original_Code Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_UserName,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Code,String)
             End If
-            If (Original_Section Is Nothing) Then
+            If (Original_UserName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Section,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_UserName,String)
             End If
-            If (Original_Mobile Is Nothing) Then
+            If (Original_BasicSalary.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_BasicSalary.Value,Decimal)
+            Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_Section Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Mobile,String)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Section,String)
+            End If
+            If (Original_Mobile Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Mobile,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1470,71 +1647,102 @@ Namespace UsersDataBaseDataSet2TableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal UserName As String, ByVal Section As String, ByVal Mobile As String, ByVal Stamp1 As String, ByVal Stamp2 As String, ByVal Stamp3 As String, ByVal Stamp4 As String, ByVal Stamp5 As String, ByVal Stamp6 As String, ByVal Stamp7 As String, ByVal Stamp8 As String, ByVal Stamp9 As String, ByVal Stamp10 As String) As Integer
-            If (UserName Is Nothing) Then
+        Public Overloads Overridable Function Insert( _
+                    ByVal Code As String,  _
+                    ByVal UserName As String,  _
+                    ByVal Designation As String,  _
+                    ByVal BasicSalary As Global.System.Nullable(Of Decimal),  _
+                    ByVal Section As String,  _
+                    ByVal Mobile As String,  _
+                    ByVal Stamp1 As String,  _
+                    ByVal Stamp2 As String,  _
+                    ByVal Stamp3 As String,  _
+                    ByVal Stamp4 As String,  _
+                    ByVal Stamp5 As String,  _
+                    ByVal Stamp6 As String,  _
+                    ByVal Stamp7 As String,  _
+                    ByVal Stamp8 As String,  _
+                    ByVal Stamp9 As String,  _
+                    ByVal Stamp10 As String) As Integer
+            If (Code Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(UserName,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Code,String)
             End If
-            If (Section Is Nothing) Then
+            If (UserName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Section,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(UserName,String)
             End If
-            If (Mobile Is Nothing) Then
+            If (Designation Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Mobile,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Designation,String)
             End If
-            If (Stamp1 Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            If (BasicSalary.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(BasicSalary.Value,Decimal)
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Stamp1,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (Stamp2 Is Nothing) Then
+            If (Section Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Stamp2,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Section,String)
             End If
-            If (Stamp3 Is Nothing) Then
+            If (Mobile Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Stamp3,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Mobile,String)
             End If
-            If (Stamp4 Is Nothing) Then
+            If (Stamp1 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Stamp4,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(Stamp1,String)
             End If
-            If (Stamp5 Is Nothing) Then
+            If (Stamp2 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Stamp5,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Stamp2,String)
             End If
-            If (Stamp6 Is Nothing) Then
+            If (Stamp3 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Stamp6,String)
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(Stamp3,String)
             End If
-            If (Stamp7 Is Nothing) Then
+            If (Stamp4 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(Stamp7,String)
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(Stamp4,String)
             End If
-            If (Stamp8 Is Nothing) Then
+            If (Stamp5 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Stamp8,String)
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(Stamp5,String)
             End If
-            If (Stamp9 Is Nothing) Then
+            If (Stamp6 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(11).Value = CType(Stamp9,String)
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(Stamp6,String)
             End If
-            If (Stamp10 Is Nothing) Then
+            If (Stamp7 Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(12).Value = CType(Stamp10,String)
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(Stamp7,String)
+            End If
+            If (Stamp8 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(Stamp8,String)
+            End If
+            If (Stamp9 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(Stamp9,String)
+            End If
+            If (Stamp10 Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(Stamp10,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -1556,7 +1764,10 @@ Namespace UsersDataBaseDataSet2TableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
+                    ByVal Code As String,  _
                     ByVal UserName As String,  _
+                    ByVal Designation As String,  _
+                    ByVal BasicSalary As Global.System.Nullable(Of Decimal),  _
                     ByVal Section As String,  _
                     ByVal Mobile As String,  _
                     ByVal Stamp1 As String,  _
@@ -1570,98 +1781,129 @@ Namespace UsersDataBaseDataSet2TableAdapters
                     ByVal Stamp9 As String,  _
                     ByVal Stamp10 As String,  _
                     ByVal Original_UsersId As Integer,  _
+                    ByVal Original_Code As String,  _
                     ByVal Original_UserName As String,  _
+                    ByVal Original_BasicSalary As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Section As String,  _
                     ByVal Original_Mobile As String,  _
                     ByVal UsersId As Integer) As Integer
-            If (UserName Is Nothing) Then
+            If (Code Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(UserName,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Code,String)
             End If
-            If (Section Is Nothing) Then
+            If (UserName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Section,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(UserName,String)
             End If
-            If (Mobile Is Nothing) Then
+            If (Designation Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Mobile,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Designation,String)
             End If
-            If (Stamp1 Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            If (BasicSalary.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(BasicSalary.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Stamp1,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             End If
-            If (Stamp2 Is Nothing) Then
+            If (Section Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Stamp2,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Section,String)
             End If
-            If (Stamp3 Is Nothing) Then
+            If (Mobile Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Stamp3,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Mobile,String)
             End If
-            If (Stamp4 Is Nothing) Then
+            If (Stamp1 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Stamp4,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Stamp1,String)
             End If
-            If (Stamp5 Is Nothing) Then
+            If (Stamp2 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Stamp5,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Stamp2,String)
             End If
-            If (Stamp6 Is Nothing) Then
+            If (Stamp3 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Stamp6,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Stamp3,String)
             End If
-            If (Stamp7 Is Nothing) Then
+            If (Stamp4 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Stamp7,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Stamp4,String)
             End If
-            If (Stamp8 Is Nothing) Then
+            If (Stamp5 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Stamp8,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Stamp5,String)
             End If
-            If (Stamp9 Is Nothing) Then
+            If (Stamp6 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Stamp9,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Stamp6,String)
             End If
-            If (Stamp10 Is Nothing) Then
+            If (Stamp7 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Stamp10,String)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Stamp7,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_UsersId,Integer)
-            If (Original_UserName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+            If (Stamp8 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Stamp8,String)
+            End If
+            If (Stamp9 Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Stamp9,String)
+            End If
+            If (Stamp10 Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_UserName,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Stamp10,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_UsersId,Integer)
+            If (Original_Code Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Code,String)
+            End If
+            If (Original_UserName Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_UserName,String)
+            End If
+            If (Original_BasicSalary.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_BasicSalary.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
             If (Original_Section Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Section,String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_Section,String)
             End If
             If (Original_Mobile Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Mobile,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_Mobile,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(UsersId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(UsersId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1682,7 +1924,10 @@ Namespace UsersDataBaseDataSet2TableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
         Public Overloads Overridable Function Update( _
+                    ByVal Code As String,  _
                     ByVal UserName As String,  _
+                    ByVal Designation As String,  _
+                    ByVal BasicSalary As Global.System.Nullable(Of Decimal),  _
                     ByVal Section As String,  _
                     ByVal Mobile As String,  _
                     ByVal Stamp1 As String,  _
@@ -1696,10 +1941,12 @@ Namespace UsersDataBaseDataSet2TableAdapters
                     ByVal Stamp9 As String,  _
                     ByVal Stamp10 As String,  _
                     ByVal Original_UsersId As Integer,  _
+                    ByVal Original_Code As String,  _
                     ByVal Original_UserName As String,  _
+                    ByVal Original_BasicSalary As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Section As String,  _
                     ByVal Original_Mobile As String) As Integer
-            Return Me.Update(UserName, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stamp8, Stamp9, Stamp10, Original_UsersId, Original_UserName, Original_Section, Original_Mobile, Original_UsersId)
+            Return Me.Update(Code, UserName, Designation, BasicSalary, Section, Mobile, Stamp1, Stamp2, Stamp3, Stamp4, Stamp5, Stamp6, Stamp7, Stamp8, Stamp9, Stamp10, Original_UsersId, Original_Code, Original_UserName, Original_BasicSalary, Original_Section, Original_Mobile, Original_UsersId)
         End Function
     End Class
     

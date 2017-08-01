@@ -4,12 +4,7 @@ Public Class RegisterUsers
     Dim matchType As Integer = 0
     Dim sRegTemplate As String = String.Empty
     Dim sRegTemplate10 As String = String.Empty
-    Private Sub UsersStampsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles UsersStampsBindingNavigatorSaveItem.Click
-        Me.Validate()
-        Me.UsersStampsBindingSource.EndEdit()
-        Me.TableAdapterManager.UpdateAll(Me.UsersDataBaseDataSet2)
-
-    End Sub
+    Dim addUser As Boolean = False
     Private Sub RegisterUsers_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         AxZKFPEngX1.EndEngine()
     End Sub
@@ -19,7 +14,7 @@ Public Class RegisterUsers
         If (AxZKFPEngX1.InitEngine = 0) Then
             AxZKFPEngX1.FPEngineVersion = "9"
             Dim fpcHandle As Integer = AxZKFPEngX1.CreateFPCacheDBEx()
-            If AxZKFPEngX1.SensorSN() <> "{CB273F0D-686A-4E17-8B2A-84C6D0DD68D4}" Then End
+            'If AxZKFPEngX1.SensorSN() <> "{CB273F0D-686A-4E17-8B2A-84C6D0DD68D4}" Then End
             StatusLabel2.Text = "Serial Number: " + AxZKFPEngX1.SensorSN() + "   /   "
             StatusLabel1.Text = "Sensor Number: " + AxZKFPEngX1.SensorCount().ToString + "  /   "
             StatusLabel3.Text = "Initial Succeed"
@@ -34,6 +29,14 @@ Public Class RegisterUsers
         AxZKFPEngX1.EnrollCount = 3
         AxZKFPEngX1.BeginEnroll()
         StatusLabel3.Text = "Start Register"
+        For Each control As Control In GroupBox2.Controls
+            If control.Name.Contains("Stamp") And TypeOf (control) Is TextBox Then
+                If control.Text = "" Or control.Text = " " Then
+                    control.Focus()
+                    Exit For
+                End If
+            End If
+        Next
     End Sub
     Private Sub AxZKFPEngX1_OnImageReceived(sender As Object, e As IZKFPEngXEvents_OnImageReceivedEvent) Handles AxZKFPEngX1.OnImageReceived
         Dim HDC As Long = PB_finger.CreateGraphics.GetHdc.ToInt32
@@ -147,13 +150,14 @@ Public Class RegisterUsers
     End Sub
 
     Private Sub ToolStripButton1_Click(sender As Object, e As EventArgs) Handles ToolStripButton1.Click
-        If UsersStampsBindingSource.Count = 0 Then GoTo SS
+        If (addUser) Then MsgBox("Pls save current user first") : Exit Sub
+        '        If UsersStampsBindingSource.Count = 0 Then GoTo SS
 
-        If (UserNameTextBox.Text = "" And SectionTextBox.Text = "" And MobileTextBox.Text = "") Then
-            MsgBox("Error adding recored before save the previus one")
-            Exit Sub
-        End If
-SS:
+        '        If (UserNameTextBox.Text = "" And SectionTextBox.Text = "" And MobileTextBox.Text = "") Then
+        '            MsgBox("Error adding recored before save the previus one")
+        '            Exit Sub
+        '        End If
+        'SS:
         UsersStampsBindingNavigator.BindingSource.AddNew()
         UsersStampsBindingNavigator.BindingSource.MoveLast()
         Stamp1TextBox.Text = " "
@@ -166,6 +170,22 @@ SS:
         Stamp8TextBox.Text = " "
         Stamp9TextBox.Text = " "
         Stamp10TextBox.Text = " "
+        addUser = True
+    End Sub
+    Private Sub UsersStampsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles UsersStampsBindingNavigatorSaveItem.Click
+        If (UserNameTextBox.Text = "" Or SectionTextBox.Text = "" Or CodeTextBox.Text = "" Or DesignationComboBox.Text = "") Then
+            MsgBox("please fill the basic info's ,mobile is option")
+            Exit Sub
+        End If
+        Me.Validate()
+        Me.UsersStampsBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.UsersDataBaseDataSet2)
+        addUser = False
+    End Sub
 
+    Private Sub MobileTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MobileTextBox.KeyPress
+        If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
+        End If
     End Sub
 End Class

@@ -35,7 +35,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\Report\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Report.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>true</UseVSHostingProcess>
@@ -209,9 +209,12 @@
   <ItemGroup>
     <None Include="error.png" />
     <Content Include="users-add-user-icon.ico" />
-    <Content Include="UsersDataBase.mdf" />
+    <Content Include="UsersDataBase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="UsersDataBase_log.ldf">
       <DependentUpon>UsersDataBase.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
