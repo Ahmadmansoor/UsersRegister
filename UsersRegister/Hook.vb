@@ -1,5 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
-
+Imports UsersRegister.AccessForm
 Public Class Hook
     Private Structure MSLLHOOKSTRUCT
         Public pt As Point
@@ -47,6 +47,7 @@ Public Class Hook
             In_Out_Time = 2
         ElseIf wParam.ToInt32 = 519 Then
             In_Out_Time = 3
+
         End If
         Return CallNextHookEx(WH_MOUSE_LL, nCode, wParam, lParam)
     End Function

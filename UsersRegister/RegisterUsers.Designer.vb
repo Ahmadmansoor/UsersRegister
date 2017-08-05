@@ -293,7 +293,7 @@ Partial Class RegisterUsers
         Me.UsersStampsBindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.UsersStampsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
         Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(540, 25)
-        Me.UsersStampsBindingNavigator.TabIndex = 0
+        Me.UsersStampsBindingNavigator.TabIndex = 4
         Me.UsersStampsBindingNavigator.Text = "BindingNavigator1"
         '
         'BindingNavigatorAddNewItem
@@ -417,7 +417,7 @@ Partial Class RegisterUsers
         Me.UsersIdTextBox.Name = "UsersIdTextBox"
         Me.UsersIdTextBox.ReadOnly = True
         Me.UsersIdTextBox.Size = New System.Drawing.Size(38, 25)
-        Me.UsersIdTextBox.TabIndex = 2
+        Me.UsersIdTextBox.TabIndex = 0
         '
         'UserNameTextBox
         '
@@ -426,7 +426,7 @@ Partial Class RegisterUsers
         Me.UserNameTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.UserNameTextBox.Name = "UserNameTextBox"
         Me.UserNameTextBox.Size = New System.Drawing.Size(293, 25)
-        Me.UserNameTextBox.TabIndex = 4
+        Me.UserNameTextBox.TabIndex = 1
         '
         'SectionTextBox
         '
@@ -435,7 +435,7 @@ Partial Class RegisterUsers
         Me.SectionTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SectionTextBox.Name = "SectionTextBox"
         Me.SectionTextBox.Size = New System.Drawing.Size(167, 25)
-        Me.SectionTextBox.TabIndex = 6
+        Me.SectionTextBox.TabIndex = 4
         '
         'MobileTextBox
         '
@@ -444,7 +444,7 @@ Partial Class RegisterUsers
         Me.MobileTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.MobileTextBox.Name = "MobileTextBox"
         Me.MobileTextBox.Size = New System.Drawing.Size(143, 25)
-        Me.MobileTextBox.TabIndex = 8
+        Me.MobileTextBox.TabIndex = 5
         '
         'Stamp1TextBox
         '
@@ -453,7 +453,7 @@ Partial Class RegisterUsers
         Me.Stamp1TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp1TextBox.Name = "Stamp1TextBox"
         Me.Stamp1TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp1TextBox.TabIndex = 10
+        Me.Stamp1TextBox.TabIndex = 0
         '
         'Stamp2TextBox
         '
@@ -462,7 +462,7 @@ Partial Class RegisterUsers
         Me.Stamp2TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp2TextBox.Name = "Stamp2TextBox"
         Me.Stamp2TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp2TextBox.TabIndex = 12
+        Me.Stamp2TextBox.TabIndex = 1
         '
         'Stamp3TextBox
         '
@@ -471,7 +471,7 @@ Partial Class RegisterUsers
         Me.Stamp3TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp3TextBox.Name = "Stamp3TextBox"
         Me.Stamp3TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp3TextBox.TabIndex = 14
+        Me.Stamp3TextBox.TabIndex = 2
         '
         'Stamp4TextBox
         '
@@ -480,7 +480,7 @@ Partial Class RegisterUsers
         Me.Stamp4TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp4TextBox.Name = "Stamp4TextBox"
         Me.Stamp4TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp4TextBox.TabIndex = 16
+        Me.Stamp4TextBox.TabIndex = 3
         '
         'Stamp5TextBox
         '
@@ -489,7 +489,7 @@ Partial Class RegisterUsers
         Me.Stamp5TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp5TextBox.Name = "Stamp5TextBox"
         Me.Stamp5TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp5TextBox.TabIndex = 18
+        Me.Stamp5TextBox.TabIndex = 4
         '
         'Stamp6TextBox
         '
@@ -498,7 +498,7 @@ Partial Class RegisterUsers
         Me.Stamp6TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp6TextBox.Name = "Stamp6TextBox"
         Me.Stamp6TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp6TextBox.TabIndex = 20
+        Me.Stamp6TextBox.TabIndex = 5
         '
         'Stamp7TextBox
         '
@@ -507,7 +507,7 @@ Partial Class RegisterUsers
         Me.Stamp7TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp7TextBox.Name = "Stamp7TextBox"
         Me.Stamp7TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp7TextBox.TabIndex = 22
+        Me.Stamp7TextBox.TabIndex = 6
         '
         'Stamp8TextBox
         '
@@ -516,7 +516,7 @@ Partial Class RegisterUsers
         Me.Stamp8TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp8TextBox.Name = "Stamp8TextBox"
         Me.Stamp8TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp8TextBox.TabIndex = 24
+        Me.Stamp8TextBox.TabIndex = 7
         '
         'Stamp9TextBox
         '
@@ -525,7 +525,7 @@ Partial Class RegisterUsers
         Me.Stamp9TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp9TextBox.Name = "Stamp9TextBox"
         Me.Stamp9TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp9TextBox.TabIndex = 26
+        Me.Stamp9TextBox.TabIndex = 8
         '
         'Stamp10TextBox
         '
@@ -534,7 +534,7 @@ Partial Class RegisterUsers
         Me.Stamp10TextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Stamp10TextBox.Name = "Stamp10TextBox"
         Me.Stamp10TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp10TextBox.TabIndex = 28
+        Me.Stamp10TextBox.TabIndex = 9
         '
         'GroupBox1
         '
@@ -552,7 +552,7 @@ Partial Class RegisterUsers
         Me.GroupBox1.Location = New System.Drawing.Point(12, 28)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(519, 130)
-        Me.GroupBox1.TabIndex = 29
+        Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Basic Info"
         '
@@ -562,7 +562,7 @@ Partial Class RegisterUsers
         Me.CodeTextBox.Location = New System.Drawing.Point(92, 59)
         Me.CodeTextBox.Name = "CodeTextBox"
         Me.CodeTextBox.Size = New System.Drawing.Size(100, 25)
-        Me.CodeTextBox.TabIndex = 12
+        Me.CodeTextBox.TabIndex = 2
         '
         'DesignationComboBox
         '
@@ -572,7 +572,7 @@ Partial Class RegisterUsers
         Me.DesignationComboBox.Location = New System.Drawing.Point(300, 59)
         Me.DesignationComboBox.Name = "DesignationComboBox"
         Me.DesignationComboBox.Size = New System.Drawing.Size(192, 26)
-        Me.DesignationComboBox.TabIndex = 11
+        Me.DesignationComboBox.TabIndex = 3
         '
         'AxZKFPEngX1
         '
@@ -611,7 +611,7 @@ Partial Class RegisterUsers
         Me.GroupBox2.Location = New System.Drawing.Point(12, 164)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(519, 251)
-        Me.GroupBox2.TabIndex = 31
+        Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Stamps Area"
         '
@@ -620,14 +620,14 @@ Partial Class RegisterUsers
         Me.Bu_Ver.Location = New System.Drawing.Point(269, 206)
         Me.Bu_Ver.Name = "Bu_Ver"
         Me.Bu_Ver.Size = New System.Drawing.Size(146, 34)
-        Me.Bu_Ver.TabIndex = 36
+        Me.Bu_Ver.TabIndex = 11
         Me.Bu_Ver.Text = "Verify "
         Me.Bu_Ver.UseVisualStyleBackColor = True
         '
         'PB_finger
         '
         Me.PB_finger.Image = Global.UsersRegister.My.Resources.Resources.error_
-        Me.PB_finger.Location = New System.Drawing.Point(194, 65)
+        Me.PB_finger.Location = New System.Drawing.Point(195, 65)
         Me.PB_finger.Name = "PB_finger"
         Me.PB_finger.Size = New System.Drawing.Size(132, 98)
         Me.PB_finger.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -639,7 +639,7 @@ Partial Class RegisterUsers
         Me.Bu_Reg.Location = New System.Drawing.Point(117, 206)
         Me.Bu_Reg.Name = "Bu_Reg"
         Me.Bu_Reg.Size = New System.Drawing.Size(146, 34)
-        Me.Bu_Reg.TabIndex = 35
+        Me.Bu_Reg.TabIndex = 10
         Me.Bu_Reg.Text = "Register"
         Me.Bu_Reg.UseVisualStyleBackColor = True
         '
@@ -651,7 +651,7 @@ Partial Class RegisterUsers
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 630)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(540, 26)
-        Me.StatusStrip1.TabIndex = 33
+        Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
         'StatusLabel3
@@ -690,7 +690,7 @@ Partial Class RegisterUsers
         Me.UsersStampsDataGridView.Name = "UsersStampsDataGridView"
         Me.UsersStampsDataGridView.ReadOnly = True
         Me.UsersStampsDataGridView.Size = New System.Drawing.Size(519, 204)
-        Me.UsersStampsDataGridView.TabIndex = 33
+        Me.UsersStampsDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
         '

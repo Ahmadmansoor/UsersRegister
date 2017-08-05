@@ -40,10 +40,12 @@ Partial Class AccessForm
         Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InOutTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IOUsersDataSet = New UsersRegister.IOUsersDataSet()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.UsersStampsTableAdapter = New UsersRegister.IOUsersDataSetTableAdapters.UsersStampsTableAdapter()
         Me.UsersStampsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.InOutTableTableAdapter = New UsersRegister.IOUsersDataSetTableAdapters.InOutTableTableAdapter()
         Me.TableAdapterManager = New UsersRegister.IOUsersDataSetTableAdapters.TableAdapterManager()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.PB_Stamp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -51,13 +53,14 @@ Partial Class AccessForm
         CType(Me.InOutTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.IOUsersDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersStampsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Bu_Exit
         '
         Me.Bu_Exit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bu_Exit.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bu_Exit.Location = New System.Drawing.Point(1111, 615)
+        Me.Bu_Exit.Location = New System.Drawing.Point(1128, 16)
         Me.Bu_Exit.Margin = New System.Windows.Forms.Padding(4)
         Me.Bu_Exit.Name = "Bu_Exit"
         Me.Bu_Exit.Size = New System.Drawing.Size(101, 68)
@@ -78,9 +81,9 @@ Partial Class AccessForm
         '
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusLabel3, Me.StatusLabel1, Me.StatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 687)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 723)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(1214, 26)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1250, 26)
         Me.StatusStrip1.TabIndex = 34
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -113,7 +116,7 @@ Partial Class AccessForm
         Me.PB_Stamp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PB_Stamp.BackgroundImage = Global.UsersRegister.My.Resources.Resources.error_
         Me.PB_Stamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_Stamp.Location = New System.Drawing.Point(1014, 615)
+        Me.PB_Stamp.Location = New System.Drawing.Point(1031, 16)
         Me.PB_Stamp.Name = "PB_Stamp"
         Me.PB_Stamp.Size = New System.Drawing.Size(81, 66)
         Me.PB_Stamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -133,9 +136,9 @@ Partial Class AccessForm
         Me.InOutTableDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.InOutTableDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.InOutTableDataGridView.DataSource = Me.InOutTableBindingSource
-        Me.InOutTableDataGridView.Location = New System.Drawing.Point(12, 12)
+        Me.InOutTableDataGridView.Location = New System.Drawing.Point(8, 10)
         Me.InOutTableDataGridView.Name = "InOutTableDataGridView"
-        Me.InOutTableDataGridView.Size = New System.Drawing.Size(1200, 596)
+        Me.InOutTableDataGridView.Size = New System.Drawing.Size(1236, 609)
         Me.InOutTableDataGridView.TabIndex = 35
         '
         'DataGridViewTextBoxColumn1
@@ -185,6 +188,11 @@ Partial Class AccessForm
         Me.IOUsersDataSet.DataSetName = "IOUsersDataSet"
         Me.IOUsersDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 1000
+        '
         'UsersStampsTableAdapter
         '
         Me.UsersStampsTableAdapter.ClearBeforeFill = True
@@ -205,16 +213,27 @@ Partial Class AccessForm
         Me.TableAdapterManager.UpdateOrder = UsersRegister.IOUsersDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsersStampsTableAdapter = Me.UsersStampsTableAdapter
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Bu_Exit)
+        Me.GroupBox1.Controls.Add(Me.PB_Stamp)
+        Me.GroupBox1.Location = New System.Drawing.Point(8, 625)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(1236, 91)
+        Me.GroupBox1.TabIndex = 36
+        Me.GroupBox1.TabStop = False
+        '
         'AccessForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1214, 713)
+        Me.ClientSize = New System.Drawing.Size(1250, 749)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.InOutTableDataGridView)
-        Me.Controls.Add(Me.PB_Stamp)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.AxZKFPEngX1)
-        Me.Controls.Add(Me.Bu_Exit)
         Me.Font = New System.Drawing.Font("Arial", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -230,6 +249,7 @@ Partial Class AccessForm
         CType(Me.InOutTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.IOUsersDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsersStampsBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -255,4 +275,6 @@ Partial Class AccessForm
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents GroupBox1 As GroupBox
 End Class

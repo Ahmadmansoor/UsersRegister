@@ -450,7 +450,7 @@ Partial Public Class ReprotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddInOutTableRow(ByVal UserId As Integer, ByVal UserName As String, ByVal TimeIn As Date, ByVal TimeOut As Date, ByVal DifTime As System.TimeSpan) As InOutTableRow
+        Public Overloads Function AddInOutTableRow(ByVal UserId As Integer, ByVal UserName As String, ByVal TimeIn As Date, ByVal TimeOut As Date, ByVal DifTime As Decimal) As InOutTableRow
             Dim rowInOutTableRow As InOutTableRow = CType(Me.NewRow,InOutTableRow)
             Dim columnValuesArray() As Object = New Object() {Nothing, UserId, UserName, TimeIn, TimeOut, DifTime}
             rowInOutTableRow.ItemArray = columnValuesArray
@@ -502,7 +502,7 @@ Partial Public Class ReprotDataSet
             MyBase.Columns.Add(Me.columnTimeIn)
             Me.columnTimeOut = New Global.System.Data.DataColumn("TimeOut", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTimeOut)
-            Me.columnDifTime = New Global.System.Data.DataColumn("DifTime", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            Me.columnDifTime = New Global.System.Data.DataColumn("DifTime", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDifTime)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnInOutId}, true))
             Me.columnInOutId.AutoIncrement = true
@@ -1176,10 +1176,10 @@ Partial Public Class ReprotDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property DifTime() As System.TimeSpan
+        Public Property DifTime() As Decimal
             Get
                 Try 
-                    Return CType(Me(Me.tableInOutTable.DifTimeColumn),Global.System.TimeSpan)
+                    Return CType(Me(Me.tableInOutTable.DifTimeColumn),Decimal)
                 Catch e As Global.System.InvalidCastException
                     Throw New Global.System.Data.StrongTypingException("The value for column 'DifTime' in table 'InOutTable' is DBNull.", e)
                 End Try

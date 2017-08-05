@@ -2,7 +2,7 @@
 <doc>
 <assembly>
 <name>
-reg
+access
 </name>
 </assembly>
 <members>
@@ -107,13 +107,17 @@ Used to sort self-referenced table's rows
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:UsersRegister.My.Resources.Resources._error">
+<member name="P:UsersRegister.My.Resources.Resources.error_">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
 <member name="F:UsersRegister.PublicInOutVar.In_Out_Time">
- <summary> check if user logout or login 1=LogIn 2=Logout</summary>
+ <summary> check if user logout or login 
+ //// 1=LogIn 
+ //// 2=Logout
+ //// 3=middle mouse press copy to USP 
+ </summary>
 </member>
 <member name="T:UsersRegister.ReprotDataSet">
 <summary>
