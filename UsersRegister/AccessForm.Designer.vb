@@ -32,12 +32,6 @@ Partial Class AccessForm
         Me.StatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PB_Stamp = New System.Windows.Forms.PictureBox()
         Me.InOutTableDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InOutTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IOUsersDataSet = New UsersRegister.IOUsersDataSet()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -46,6 +40,13 @@ Partial Class AccessForm
         Me.InOutTableTableAdapter = New UsersRegister.IOUsersDataSetTableAdapters.InOutTableTableAdapter()
         Me.TableAdapterManager = New UsersRegister.IOUsersDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.PB_Stamp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,7 +117,7 @@ Partial Class AccessForm
         Me.PB_Stamp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PB_Stamp.BackgroundImage = Global.UsersRegister.My.Resources.Resources.error_
         Me.PB_Stamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_Stamp.Location = New System.Drawing.Point(1031, 16)
+        Me.PB_Stamp.Location = New System.Drawing.Point(1040, 16)
         Me.PB_Stamp.Name = "PB_Stamp"
         Me.PB_Stamp.Size = New System.Drawing.Size(81, 66)
         Me.PB_Stamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -140,43 +141,6 @@ Partial Class AccessForm
         Me.InOutTableDataGridView.Name = "InOutTableDataGridView"
         Me.InOutTableDataGridView.Size = New System.Drawing.Size(1236, 609)
         Me.InOutTableDataGridView.TabIndex = 35
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "InOutId"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "InOutId"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "UserId"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "UserId"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "UserName"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "UserName"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "TimeIn"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "TimeIn"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "TimeOut"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "TimeOut"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "DifTime"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "DifTime"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         '
         'InOutTableBindingSource
         '
@@ -217,6 +181,7 @@ Partial Class AccessForm
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Bu_Exit)
         Me.GroupBox1.Controls.Add(Me.PB_Stamp)
         Me.GroupBox1.Location = New System.Drawing.Point(8, 625)
@@ -224,6 +189,56 @@ Partial Class AccessForm
         Me.GroupBox1.Size = New System.Drawing.Size(1236, 91)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "InOutId"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "InOutId"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "UserId"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "UserId"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "UserName"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "UserName"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "TimeIn"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "TimeIn"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "TimeOut"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "TimeOut"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "DifTime"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "DifTime"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(932, 16)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(101, 68)
+        Me.Button1.TabIndex = 36
+        Me.Button1.Text = "Exit"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'AccessForm
         '
@@ -269,12 +284,13 @@ Partial Class AccessForm
     Friend WithEvents InOutTableTableAdapter As IOUsersDataSetTableAdapters.InOutTableTableAdapter
     Friend WithEvents TableAdapterManager As IOUsersDataSetTableAdapters.TableAdapterManager
     Friend WithEvents InOutTableDataGridView As DataGridView
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents Timer1 As Timer
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Button1 As Button
 End Class

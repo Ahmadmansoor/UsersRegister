@@ -144,8 +144,8 @@ Public Class AccessForm
         Dim d As DriveInfo = New DriveInfo("D:\")
         Dim s = d.DriveType()
         If (s <> 2) Then
-            'My.Computer.Audio.Play("sound\Insertflash.wav", AudioPlayMode.Background)
-            'Exit Sub
+            My.Computer.Audio.Play("sound\Insertflash.wav", AudioPlayMode.Background)
+            Exit Sub
         End If
 
         Dim month_date As Date = Today

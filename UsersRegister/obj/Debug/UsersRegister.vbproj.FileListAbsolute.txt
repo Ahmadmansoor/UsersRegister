@@ -41,3 +41,4 @@ D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\access.xml
 D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\access.exe
 D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\access.xml
 D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\access.pdb
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\UsersRegister.vbprojResolveAssemblyReference.cache
