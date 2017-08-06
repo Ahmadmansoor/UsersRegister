@@ -58,7 +58,7 @@ Public Class AccessForm
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
                 Try
-                    Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
+                    Dim CheckifUserReg = From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
@@ -67,21 +67,24 @@ Public Class AccessForm
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)
 
-
-                    If (CheckifUserReg.UsersId <> 0) Then
-                        Dim IsUserExit = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.UsersId)
-                        If (IsUserExit.Any) Then
-                            My.Computer.Audio.Play("sound\LogOut.wav", AudioPlayMode.Background)
-                        Else
-                            InOutTableTableAdapter.Insert(CheckifUserReg.UsersId, CheckifUserReg.UserName, DateAndTime.Now, DateTime.MaxValue, 0)
-                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.Background)
-                        End If
+                    If (CheckifUserReg.Any) Then
+                        'If (CheckifUserReg.First.UsersId <> 0) Then
+                        Dim IsUserExit = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.First.UsersId)
+                            If (IsUserExit.Any) Then
+                                My.Computer.Audio.Play("sound\LogOut.wav", AudioPlayMode.Background)
+                            Else
+                                InOutTableTableAdapter.Insert(CheckifUserReg.First.UsersId, CheckifUserReg.First.UserName, DateAndTime.Now, DateTime.MaxValue, 0)
+                                My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.Background)
+                            End If
+                        'Else
+                        'My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.Background)
+                        'End If
+                        Me.InOutTableTableAdapter.FillBy_month(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
                     Else
                         My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.Background)
                     End If
-                    Me.InOutTableTableAdapter.FillBy_month(Me.IOUsersDataSet.InOutTable, Today.Year, Today.Month)
                 Catch ex As Exception
                     My.Computer.Audio.Play("sound\somethingworng.wav", AudioPlayMode.Background)
                 End Try
@@ -91,7 +94,7 @@ Public Class AccessForm
                 Dim bTemp As String = String.Empty
                 sTemp = AxZKFPEngX1.GetTemplateAsString()
                 Try
-                    Dim CheckifUserReg = (From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
+                    Dim CheckifUserReg = From num In UsersStampsTableAdapter.GetData Where AxZKFPEngX1.VerFingerFromStr(num.Stamp1, sTemp, False, RegChanged) Or
                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp2, sTemp, False, RegChanged) Or
                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp3, sTemp, False, RegChanged) Or
                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp4, sTemp, False, RegChanged) Or
@@ -100,20 +103,25 @@ Public Class AccessForm
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp7, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp8, sTemp, False, RegChanged) Or
                                                                                     AxZKFPEngX1.VerFingerFromStr(num.Stamp9, sTemp, False, RegChanged) Or
-                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)).First
-                    If (CheckifUserReg.UsersId <> 0) Then
-                        Dim IsUserin = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.UsersId)
-                        If (IsUserin.Any) Then
-                            Dim timeout As DateTime = DateAndTime.Now
-                            Dim temp As TimeSpan = timeout.Subtract(IsUserin.First.TimeIn)
-                            InOutTableTableAdapter.Update_TimeOutDiff(DateTime.Now, temp.TotalHours.ToString, IsUserin.First.InOutId)
-                            My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.Background)
-                        Else
-                            My.Computer.Audio.Play("sound\LogIn.wav", AudioPlayMode.Background)
-                        End If
+                                                                                    AxZKFPEngX1.VerFingerFromStr(num.Stamp10, sTemp, False, RegChanged)
+                    If (CheckifUserReg.Any) Then
+                        'If (CheckifUserReg.First.UsersId <> 0) Then
+                        Dim IsUserin = InOutTableTableAdapter.GetDataBy_CheckUserIfGoOut(DateTime.MaxValue, CheckifUserReg.First.UsersId)
+                            If (IsUserin.Any) Then
+                                Dim timeout As DateTime = DateAndTime.Now
+                                Dim temp As TimeSpan = timeout.Subtract(IsUserin.First.TimeIn)
+                                InOutTableTableAdapter.Update_TimeOutDiff(DateTime.Now, temp.TotalHours.ToString, IsUserin.First.InOutId)
+                                My.Computer.Audio.Play("sound\Thankyou.wav", AudioPlayMode.Background)
+                            Else
+                                My.Computer.Audio.Play("sound\LogIn.wav", AudioPlayMode.Background)
+                            End If
+                        'Else
+                        'My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.Background)
+                        'End If
                     Else
                         My.Computer.Audio.Play("sound\Denine.wav", AudioPlayMode.Background)
                     End If
+
                 Catch ex1 As Exception
                     My.Computer.Audio.Play("sound\somethingworng.wav", AudioPlayMode.Background)
                 End Try
@@ -267,6 +275,14 @@ end_sub:
         If In_Out_Time = 3 Then
             In_Out_Time = 0
             ExportExcel()
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked Then
+            GroupBox1.Enabled = True
+        Else
+            GroupBox1.Enabled = False
         End If
     End Sub
 End Class

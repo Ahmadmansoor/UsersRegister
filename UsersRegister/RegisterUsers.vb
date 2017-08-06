@@ -173,6 +173,8 @@ Public Class RegisterUsers
         addUser = True
     End Sub
     Private Sub UsersStampsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles UsersStampsBindingNavigatorSaveItem.Click
+        Dim msgval As Integer = MsgBox("are you sure ?", MsgBoxStyle.OkCancel, "confirm")
+        If msgval = 2 Then Exit Sub
         If (UserNameTextBox.Text = "" Or SectionTextBox.Text = "" Or CodeTextBox.Text = "" Or DesignationComboBox.Text = "") Then
             MsgBox("please fill the basic info's ,mobile is option")
             Exit Sub

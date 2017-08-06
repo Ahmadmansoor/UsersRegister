@@ -32,6 +32,12 @@ Partial Class AccessForm
         Me.StatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PB_Stamp = New System.Windows.Forms.PictureBox()
         Me.InOutTableDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InOutTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.IOUsersDataSet = New UsersRegister.IOUsersDataSet()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
@@ -40,13 +46,8 @@ Partial Class AccessForm
         Me.InOutTableTableAdapter = New UsersRegister.IOUsersDataSetTableAdapters.InOutTableTableAdapter()
         Me.TableAdapterManager = New UsersRegister.IOUsersDataSetTableAdapters.TableAdapterManager()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Bu_export = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.PB_Stamp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,6 +143,44 @@ Partial Class AccessForm
         Me.InOutTableDataGridView.Size = New System.Drawing.Size(1236, 609)
         Me.InOutTableDataGridView.TabIndex = 35
         '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "InOutId"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "InOutId"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "UserId"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "UserId"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "UserName"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "UserName"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "TimeIn"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "TimeIn"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "TimeOut"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "TimeOut"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "DifTime"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "DifTime"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
         'InOutTableBindingSource
         '
         Me.InOutTableBindingSource.DataMember = "InOutTable"
@@ -181,70 +220,45 @@ Partial Class AccessForm
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.Bu_export)
         Me.GroupBox1.Controls.Add(Me.Bu_Exit)
         Me.GroupBox1.Controls.Add(Me.PB_Stamp)
+        Me.GroupBox1.Enabled = False
         Me.GroupBox1.Location = New System.Drawing.Point(8, 625)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1236, 91)
         Me.GroupBox1.TabIndex = 36
         Me.GroupBox1.TabStop = False
         '
-        'DataGridViewTextBoxColumn1
+        'Bu_export
         '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "InOutId"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "InOutId"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
+        Me.Bu_export.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Bu_export.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Bu_export.Location = New System.Drawing.Point(907, 16)
+        Me.Bu_export.Margin = New System.Windows.Forms.Padding(4)
+        Me.Bu_export.Name = "Bu_export"
+        Me.Bu_export.Size = New System.Drawing.Size(126, 68)
+        Me.Bu_export.TabIndex = 36
+        Me.Bu_export.Text = "Export to Excel"
+        Me.Bu_export.UseVisualStyleBackColor = True
         '
-        'DataGridViewTextBoxColumn2
+        'CheckBox1
         '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "UserId"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "UserId"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "UserName"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "UserName"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "TimeIn"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "TimeIn"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "TimeOut"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "TimeOut"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "DifTime"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "DifTime"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(932, 16)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 68)
-        Me.Button1.TabIndex = 36
-        Me.Button1.Text = "Exit"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.CheckBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(1048, 727)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(76, 22)
+        Me.CheckBox1.TabIndex = 37
+        Me.CheckBox1.Text = "Enable"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'AccessForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1250, 749)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.InOutTableDataGridView)
         Me.Controls.Add(Me.StatusStrip1)
@@ -292,5 +306,6 @@ Partial Class AccessForm
     Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Bu_export As Button
+    Friend WithEvents CheckBox1 As CheckBox
 End Class
