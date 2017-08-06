@@ -35,10 +35,10 @@ D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\UsersDataBase_log.ldf
 D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\RdlCompile.cache
 D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\RdlCompile.compiled
 D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\UsersRegister.vbprojResolveAssemblyReference.cache
-D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\regUser.exe.config
-D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\regUser.exe
-D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\regUser.pdb
-D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\regUser.xml
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\regUser.exe
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\regUser.xml
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\regUser.pdb
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\access.exe.config
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\access.exe
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\access.pdb
+D:\Code\Feras\UsersRegister\UsersRegister\bin\Debug\access.xml
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\access.exe
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\access.xml
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\access.pdb

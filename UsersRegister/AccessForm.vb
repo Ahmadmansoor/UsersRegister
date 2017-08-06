@@ -153,6 +153,7 @@ Public Class AccessForm
         Dim s = d.DriveType()
         If (s <> 2) Then
             My.Computer.Audio.Play("sound\Insertflash.wav", AudioPlayMode.Background)
+            MouseHook.HookMouse()
             Exit Sub
         End If
 
@@ -216,13 +217,21 @@ end_sub:
                 Dim DifSum As TimeSpan
                 For k = 0 To IOTable.Count - 1
                     xlWorkSheet.Cells(k + 2, 1) = IOTable(k).UserId
-                    xlWorkSheet.Cells(k + 2, 2) = alluser(k).Code
+                    xlWorkSheet.Cells(k + 2, 2) = alluser(i).Code
                     xlWorkSheet.Cells(k + 2, 3) = IOTable(k).UserName
                     xlWorkSheet.Cells(k + 2, 4) = IOTable(k).TimeIn.ToString
-                    xlWorkSheet.Cells(k + 2, 5) = IOTable(k).TimeOut.ToString
-                    xlWorkSheet.Cells(k + 2, 6) = IOTable(k).TimeOut.Subtract(IOTable(k).TimeIn).TotalHours.ToString  'IOTable(k).DifTime.TotalHours.ToString
+                    If (IOTable(k).TimeOut.ToString <> "12/31/9999 11:59:59 PM") Then
+                        xlWorkSheet.Cells(k + 2, 5) = IOTable(k).TimeOut.ToString
+                        xlWorkSheet.Cells(k + 2, 6) = IOTable(k).TimeOut.Subtract(IOTable(k).TimeIn).TotalHours.ToString  'IOTable(k).DifTime.TotalHours.ToString
+                        DifSum = DifSum.Add(IOTable(k).TimeOut.Subtract(IOTable(k).TimeIn))
+                    Else
+                        xlWorkSheet.Cells(k + 2, 5) = IOTable(k).TimeIn.ToString
+                        xlWorkSheet.Cells(k + 2, 6) = 0
+                    End If
 
-                    DifSum = DifSum.Add(IOTable(k).TimeOut.Subtract(IOTable(k).TimeIn))
+
+
+                    'DifSum = DifSum.Add(IOTable(k).TimeOut.Subtract(IOTable(k).TimeIn))
                     'DifSum = DifSum.Add(IOTable(k).DifTime)
 
                     formatRangeDate = xlWorkSheet.Range("A" & k + 2 & ":F" & k + 2)
