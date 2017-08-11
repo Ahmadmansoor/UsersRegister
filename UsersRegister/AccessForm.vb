@@ -34,6 +34,7 @@ Public Class AccessForm
             StatusLabel3.Text = "Initial Failed"
         End If
         Me.WindowState = FormWindowState.Maximized
+        My.Computer.Audio.Play("sound\SystemLoad.wav", AudioPlayMode.Background)
     End Sub
 
     Private Sub AccessForm_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -296,6 +297,76 @@ end_sub:
     End Sub
 
     Private Sub Bu_export_Click(sender As Object, e As EventArgs) Handles Bu_export.Click
+        MouseHook.UnHookMouse()
+        Dim file_path As String = String.Empty
+        Dim temp As String = String.Empty
+        My.Computer.Audio.Play("sound\BeginCopy.wav", AudioPlayMode.WaitToComplete)
+        ' kill Excel
+        Try
+            For Each pro In Process.GetProcesses
+                If pro.ProcessName.ToLower = "Excel".ToLower Or pro.ProcessName.ToLower = "Excel.exe".ToLower Then
+                    Process.GetProcessById(pro.Id).Kill()
+                End If
+            Next
+        Catch ex2 As Exception
 
+        End Try
+        '''''''''''''''''''''
+        Dim FolderFileBrowser_ As FolderBrowserDialog = New FolderBrowserDialog
+        'SaveFileDialog1.RestoreDirectory = True
+        'SaveFileDialog1.InitialDirectory = "C:\"
+        'SaveFileDialog1.Title = "Browse place to save Files"
+
+        If (FolderFileBrowser_.ShowDialog() = DialogResult.OK) Then
+            'file_path = SaveFileDialog1.FileName
+            temp = FolderFileBrowser_.SelectedPath
+        Else
+            Exit Sub
+        End If
+        If Not (temp.EndsWith("\")) Then temp = temp + "\"
+        'file_path = file_path.Substring(0, file_path.LastIndexOf("\"))
+        'Dim d As DriveInfo = New DriveInfo("D:\")
+        'Dim s = d.DriveType()
+        'If (s <> 2) Then
+        '    My.Computer.Audio.Play("sound\Insertflash.wav", AudioPlayMode.Background)
+        '    MouseHook.HookMouse()
+        '    Exit Sub
+        'End If
+
+        Dim month_date As Date = Today
+        Dim Prev_month As Date = month_date.AddMonths(-1)
+        Dim suc As Boolean = False
+        file_path = temp & month_date.Year & "-" & month_date.Month & "-" & month_date.Day & ".xlsx"
+        suc = WriteexcelData(file_path, month_date)
+
+        If (suc = False) Then
+            My.Computer.Audio.Play("sound\somethingworng.wav", AudioPlayMode.Background)
+            GoTo end_sub
+        End If
+
+        file_path = temp & Prev_month.Year & "-" & Prev_month.Month & "-" & Prev_month.Day & ".xlsx"
+        suc = WriteexcelData(file_path, Prev_month)
+
+        If (suc = False) Then
+            My.Computer.Audio.Play("sound\somethingworng.wav", AudioPlayMode.Background)
+            GoTo end_sub
+        End If
+
+        My.Computer.Audio.Play("sound\Finish.wav", AudioPlayMode.Background)
+
+end_sub:
+        ' kill Excel
+        Try
+            For Each pro In Process.GetProcesses
+                If pro.ProcessName.ToLower = "Excel".ToLower Or pro.ProcessName.ToLower = "Excel.exe".ToLower Then
+                    Process.GetProcessById(pro.Id).Kill()
+                End If
+            Next
+        Catch ex2 As Exception
+
+        End Try
+        '''''''''''''''''''''
+
+        MouseHook.HookMouse()
     End Sub
 End Class

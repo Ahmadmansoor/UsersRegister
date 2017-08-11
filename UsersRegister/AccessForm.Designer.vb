@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AccessForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AccessForm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AccessForm))
@@ -62,7 +62,7 @@ Partial Class AccessForm
         '
         Me.Bu_Exit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bu_Exit.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bu_Exit.Location = New System.Drawing.Point(1128, 16)
+        Me.Bu_Exit.Location = New System.Drawing.Point(624, 16)
         Me.Bu_Exit.Margin = New System.Windows.Forms.Padding(4)
         Me.Bu_Exit.Name = "Bu_Exit"
         Me.Bu_Exit.Size = New System.Drawing.Size(101, 68)
@@ -118,7 +118,7 @@ Partial Class AccessForm
         Me.PB_Stamp.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PB_Stamp.BackgroundImage = Global.UsersRegister.My.Resources.Resources.error_
         Me.PB_Stamp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PB_Stamp.Location = New System.Drawing.Point(1040, 16)
+        Me.PB_Stamp.Location = New System.Drawing.Point(536, 16)
         Me.PB_Stamp.Name = "PB_Stamp"
         Me.PB_Stamp.Size = New System.Drawing.Size(81, 66)
         Me.PB_Stamp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -234,7 +234,7 @@ Partial Class AccessForm
         '
         Me.Bu_export.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Bu_export.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Bu_export.Location = New System.Drawing.Point(907, 16)
+        Me.Bu_export.Location = New System.Drawing.Point(403, 16)
         Me.Bu_export.Margin = New System.Windows.Forms.Padding(4)
         Me.Bu_export.Name = "Bu_export"
         Me.Bu_export.Size = New System.Drawing.Size(126, 68)
@@ -246,7 +246,7 @@ Partial Class AccessForm
         '
         Me.CheckBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(1048, 727)
+        Me.CheckBox1.Location = New System.Drawing.Point(362, 727)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(76, 22)
         Me.CheckBox1.TabIndex = 37
