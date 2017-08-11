@@ -294,4 +294,8 @@ end_sub:
             GroupBox1.Enabled = False
         End If
     End Sub
+
+    Private Sub Bu_export_Click(sender As Object, e As EventArgs) Handles Bu_export.Click
+
+    End Sub
 End Class

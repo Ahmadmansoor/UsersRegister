@@ -1,4 +1,5 @@
 ﻿Imports AxZKFPEngXControl
+Imports Microsoft.Office.Interop
 
 Public Class RegisterUsers
     Dim matchType As Integer = 0
@@ -29,7 +30,10 @@ Public Class RegisterUsers
         AxZKFPEngX1.EnrollCount = 3
         AxZKFPEngX1.BeginEnroll()
         StatusLabel3.Text = "Start Register"
-        For Each control As Control In GroupBox2.Controls
+        Dim ll = From cont In GroupBox2.Controls Where cont.Name.Contains("TextBox") Order By cont.text, cont.name
+
+        'For Each control As Control In GroupBox2.Controls
+        For Each control As Control In ll
             If control.Name.Contains("Stamp") And TypeOf (control) Is TextBox Then
                 If control.Text = "" Or control.Text = " " Then
                     control.Focus()
@@ -109,8 +113,8 @@ Public Class RegisterUsers
             Stamp8TextBox.Text = sRegTemplateX
         ElseIf (Stamp9TextBox.Focused) Then
             Stamp9TextBox.Text = sRegTemplateX
-        ElseIf (Stamp10TextBox.Focused) Then
-            Stamp10TextBox.Text = sRegTemplateX
+        ElseIf (Stamp010TextBox.Focused) Then
+            Stamp010TextBox.Text = sRegTemplateX
         End If
     End Sub
     Private Sub AxZKFPEngX1_OnCapture(sender As Object, e As IZKFPEngXEvents_OnCaptureEvent) Handles AxZKFPEngX1.OnCapture
@@ -158,6 +162,9 @@ Public Class RegisterUsers
         '            Exit Sub
         '        End If
         'SS:
+        GroupBox1.Enabled = True
+        GroupBox2.Enabled = True
+
         UsersStampsBindingNavigator.BindingSource.AddNew()
         UsersStampsBindingNavigator.BindingSource.MoveLast()
         Stamp1TextBox.Text = " "
@@ -169,7 +176,7 @@ Public Class RegisterUsers
         Stamp7TextBox.Text = " "
         Stamp8TextBox.Text = " "
         Stamp9TextBox.Text = " "
-        Stamp10TextBox.Text = " "
+        Stamp010TextBox.Text = " "
         addUser = True
     End Sub
     Private Sub UsersStampsBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles UsersStampsBindingNavigatorSaveItem.Click
@@ -183,11 +190,58 @@ Public Class RegisterUsers
         Me.UsersStampsBindingSource.EndEdit()
         Me.TableAdapterManager.UpdateAll(Me.UsersDataBaseDataSet2)
         addUser = False
+        GroupBox1.Enabled = False
+        GroupBox2.Enabled = False
+        MsgBox("Done")
     End Sub
 
     Private Sub MobileTextBox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles MobileTextBox.KeyPress
         If Not IsNumeric(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub ToolStripButton2_Click(sender As Object, e As EventArgs) Handles ToolStripButton2.Click
+        Dim xlApp As Microsoft.Office.Interop.Excel.Application = New Microsoft.Office.Interop.Excel.Application
+        Dim xlWorkBook As Microsoft.Office.Interop.Excel.Workbook
+        Dim xlWorkSheet As Microsoft.Office.Interop.Excel.Worksheet
+
+        Try
+            xlWorkBook = xlApp.Workbooks.Open(Application.StartupPath & "\Salaries details.xlsx")
+            xlWorkSheet = xlWorkBook.Worksheets("sheet1")
+            Dim i As Integer = 1
+            Do Until xlWorkSheet.Cells(i, 1).value = ""
+                Dim section As String = xlWorkSheet.Cells(i, 1).value
+                Dim UserCode As String = xlWorkSheet.Cells(i, 2).value
+                Dim username As String = xlWorkSheet.Cells(i, 3).value
+                Dim Designation As String = xlWorkSheet.Cells(i, 4).value
+                UsersStampsTableAdapter.Insert(UserCode, username, Designation, 0, section, " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ")
+                i += 1
+            Loop
+
+
+            'display the cells value B2
+            'MsgBox(xlWorkSheet.Cells(2, 2).value)
+            'edit the cell with new value
+
+            xlWorkBook.Close()
+            xlApp.Quit()
+
+
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+
+    Private Sub CB_Edit_CheckedChanged(sender As Object, e As EventArgs) Handles CB_Edit.CheckedChanged
+        If CB_Edit.Checked Then
+            GroupBox1.Enabled = True
+            GroupBox2.Enabled = True
+        Else
+            GroupBox1.Enabled = False
+            GroupBox2.Enabled = False
         End If
     End Sub
 End Class

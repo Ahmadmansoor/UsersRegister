@@ -68,11 +68,10 @@ Partial Class RegisterUsers
         Me.Stamp7TextBox = New System.Windows.Forms.TextBox()
         Me.Stamp8TextBox = New System.Windows.Forms.TextBox()
         Me.Stamp9TextBox = New System.Windows.Forms.TextBox()
-        Me.Stamp10TextBox = New System.Windows.Forms.TextBox()
+        Me.Stamp010TextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CodeTextBox = New System.Windows.Forms.TextBox()
         Me.DesignationComboBox = New System.Windows.Forms.ComboBox()
-        Me.AxZKFPEngX1 = New AxZKFPEngXControl.AxZKFPEngX()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Bu_Ver = New System.Windows.Forms.Button()
         Me.PB_finger = New System.Windows.Forms.PictureBox()
@@ -101,6 +100,9 @@ Partial Class RegisterUsers
         Me.Stamp10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsersStampsTableAdapter = New UsersRegister.UsersDataBaseDataSet2TableAdapters.UsersStampsTableAdapter()
         Me.TableAdapterManager = New UsersRegister.UsersDataBaseDataSet2TableAdapters.TableAdapterManager()
+        Me.AxZKFPEngX1 = New AxZKFPEngXControl.AxZKFPEngX()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.CB_Edit = New System.Windows.Forms.CheckBox()
         UserNameLabel = New System.Windows.Forms.Label()
         SectionLabel = New System.Windows.Forms.Label()
         MobileLabel = New System.Windows.Forms.Label()
@@ -121,11 +123,11 @@ Partial Class RegisterUsers
         CType(Me.UsersStampsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsersDataBaseDataSet2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.PB_finger, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         CType(Me.UsersStampsDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UserNameLabel
@@ -283,7 +285,7 @@ Partial Class RegisterUsers
         Me.UsersStampsBindingNavigator.BindingSource = Me.UsersStampsBindingSource
         Me.UsersStampsBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.UsersStampsBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.UsersStampsBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.ToolStripButton1, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.UsersStampsBindingNavigatorSaveItem})
+        Me.UsersStampsBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.ToolStripButton1, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.UsersStampsBindingNavigatorSaveItem, Me.ToolStripButton2})
         Me.UsersStampsBindingNavigator.Location = New System.Drawing.Point(0, 0)
         Me.UsersStampsBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
         Me.UsersStampsBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
@@ -292,7 +294,7 @@ Partial Class RegisterUsers
         Me.UsersStampsBindingNavigator.Name = "UsersStampsBindingNavigator"
         Me.UsersStampsBindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.UsersStampsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(540, 25)
+        Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(616, 25)
         Me.UsersStampsBindingNavigator.TabIndex = 4
         Me.UsersStampsBindingNavigator.Text = "BindingNavigator1"
         '
@@ -527,14 +529,14 @@ Partial Class RegisterUsers
         Me.Stamp9TextBox.Size = New System.Drawing.Size(106, 25)
         Me.Stamp9TextBox.TabIndex = 8
         '
-        'Stamp10TextBox
+        'Stamp010TextBox
         '
-        Me.Stamp10TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp10", True))
-        Me.Stamp10TextBox.Location = New System.Drawing.Point(405, 174)
-        Me.Stamp10TextBox.Margin = New System.Windows.Forms.Padding(4)
-        Me.Stamp10TextBox.Name = "Stamp10TextBox"
-        Me.Stamp10TextBox.Size = New System.Drawing.Size(106, 25)
-        Me.Stamp10TextBox.TabIndex = 9
+        Me.Stamp010TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Stamp10", True))
+        Me.Stamp010TextBox.Location = New System.Drawing.Point(405, 174)
+        Me.Stamp010TextBox.Margin = New System.Windows.Forms.Padding(4)
+        Me.Stamp010TextBox.Name = "Stamp010TextBox"
+        Me.Stamp010TextBox.Size = New System.Drawing.Size(106, 25)
+        Me.Stamp010TextBox.TabIndex = 9
         '
         'GroupBox1
         '
@@ -549,7 +551,8 @@ Partial Class RegisterUsers
         Me.GroupBox1.Controls.Add(Me.SectionTextBox)
         Me.GroupBox1.Controls.Add(Me.UserNameTextBox)
         Me.GroupBox1.Controls.Add(Me.UsersIdTextBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 28)
+        Me.GroupBox1.Enabled = False
+        Me.GroupBox1.Location = New System.Drawing.Point(51, 44)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(519, 130)
         Me.GroupBox1.TabIndex = 0
@@ -558,6 +561,7 @@ Partial Class RegisterUsers
         '
         'CodeTextBox
         '
+        Me.CodeTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.CodeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsersStampsBindingSource, "Code", True))
         Me.CodeTextBox.Location = New System.Drawing.Point(92, 59)
         Me.CodeTextBox.Name = "CodeTextBox"
@@ -573,15 +577,6 @@ Partial Class RegisterUsers
         Me.DesignationComboBox.Name = "DesignationComboBox"
         Me.DesignationComboBox.Size = New System.Drawing.Size(192, 26)
         Me.DesignationComboBox.TabIndex = 3
-        '
-        'AxZKFPEngX1
-        '
-        Me.AxZKFPEngX1.Enabled = True
-        Me.AxZKFPEngX1.Location = New System.Drawing.Point(1151, 12)
-        Me.AxZKFPEngX1.Name = "AxZKFPEngX1"
-        Me.AxZKFPEngX1.OcxState = CType(resources.GetObject("AxZKFPEngX1.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.AxZKFPEngX1.Size = New System.Drawing.Size(24, 24)
-        Me.AxZKFPEngX1.TabIndex = 30
         '
         'GroupBox2
         '
@@ -605,10 +600,11 @@ Partial Class RegisterUsers
         Me.GroupBox2.Controls.Add(Stamp2Label)
         Me.GroupBox2.Controls.Add(Stamp10Label)
         Me.GroupBox2.Controls.Add(Me.Stamp3TextBox)
-        Me.GroupBox2.Controls.Add(Me.Stamp10TextBox)
+        Me.GroupBox2.Controls.Add(Me.Stamp010TextBox)
         Me.GroupBox2.Controls.Add(Me.Stamp2TextBox)
         Me.GroupBox2.Controls.Add(Stamp3Label)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 164)
+        Me.GroupBox2.Enabled = False
+        Me.GroupBox2.Location = New System.Drawing.Point(51, 177)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(519, 251)
         Me.GroupBox2.TabIndex = 1
@@ -648,9 +644,9 @@ Partial Class RegisterUsers
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusLabel3, Me.StatusLabel1, Me.StatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 630)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 649)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(540, 26)
+        Me.StatusStrip1.Size = New System.Drawing.Size(616, 26)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -686,10 +682,10 @@ Partial Class RegisterUsers
         Me.UsersStampsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsersStampsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Code, Me.UserName, Me.Designation, Me.BasicSalary, Me.Section, Me.Mobile, Me.Stamp1, Me.Stamp2, Me.Stamp3, Me.Stamp4, Me.Stamp5, Me.Stamp6, Me.Stamp7, Me.Stamp8, Me.Stamp9, Me.Stamp10})
         Me.UsersStampsDataGridView.DataSource = Me.UsersStampsBindingSource
-        Me.UsersStampsDataGridView.Location = New System.Drawing.Point(12, 423)
+        Me.UsersStampsDataGridView.Location = New System.Drawing.Point(12, 436)
         Me.UsersStampsDataGridView.Name = "UsersStampsDataGridView"
         Me.UsersStampsDataGridView.ReadOnly = True
-        Me.UsersStampsDataGridView.Size = New System.Drawing.Size(519, 204)
+        Me.UsersStampsDataGridView.Size = New System.Drawing.Size(592, 210)
         Me.UsersStampsDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
@@ -822,12 +818,41 @@ Partial Class RegisterUsers
         Me.TableAdapterManager.UpdateOrder = UsersRegister.UsersDataBaseDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UsersStampsTableAdapter = Me.UsersStampsTableAdapter
         '
+        'AxZKFPEngX1
+        '
+        Me.AxZKFPEngX1.Enabled = True
+        Me.AxZKFPEngX1.Location = New System.Drawing.Point(1151, 12)
+        Me.AxZKFPEngX1.Name = "AxZKFPEngX1"
+        Me.AxZKFPEngX1.OcxState = CType(resources.GetObject("AxZKFPEngX1.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.AxZKFPEngX1.Size = New System.Drawing.Size(24, 24)
+        Me.AxZKFPEngX1.TabIndex = 30
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
+        '
+        'CB_Edit
+        '
+        Me.CB_Edit.AutoSize = True
+        Me.CB_Edit.Location = New System.Drawing.Point(549, 28)
+        Me.CB_Edit.Name = "CB_Edit"
+        Me.CB_Edit.Size = New System.Drawing.Size(55, 22)
+        Me.CB_Edit.TabIndex = 12
+        Me.CB_Edit.Text = "Edit"
+        Me.CB_Edit.UseVisualStyleBackColor = True
+        '
         'RegisterUsers
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(540, 656)
+        Me.ClientSize = New System.Drawing.Size(616, 675)
+        Me.Controls.Add(Me.CB_Edit)
         Me.Controls.Add(Me.UsersStampsDataGridView)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.GroupBox2)
@@ -839,6 +864,7 @@ Partial Class RegisterUsers
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.Name = "RegisterUsers"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RegisterUsers"
         CType(Me.UsersStampsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UsersStampsBindingNavigator.ResumeLayout(False)
@@ -847,13 +873,13 @@ Partial Class RegisterUsers
         CType(Me.UsersDataBaseDataSet2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.PB_finger, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         CType(Me.UsersStampsDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AxZKFPEngX1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -889,7 +915,7 @@ Partial Class RegisterUsers
     Friend WithEvents Stamp7TextBox As TextBox
     Friend WithEvents Stamp8TextBox As TextBox
     Friend WithEvents Stamp9TextBox As TextBox
-    Friend WithEvents Stamp10TextBox As TextBox
+    Friend WithEvents Stamp010TextBox As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents AxZKFPEngX1 As AxZKFPEngXControl.AxZKFPEngX
     Friend WithEvents GroupBox2 As GroupBox
@@ -921,4 +947,6 @@ Partial Class RegisterUsers
     Friend WithEvents Stamp10 As DataGridViewTextBoxColumn
     Friend WithEvents CodeTextBox As TextBox
     Friend WithEvents DesignationComboBox As ComboBox
+    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents CB_Edit As CheckBox
 End Class
