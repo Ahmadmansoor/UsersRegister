@@ -54,6 +54,6 @@ D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\Access.pdb
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\Access.xml
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\Interop.ZKFPEngXControl.dll
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\AxInterop.ZKFPEngXControl.dll
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\Access.exe
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\Access.xml
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\Access.pdb
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\registerUsers.exe
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\registerUsers.xml
+D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\registerUsers.pdb

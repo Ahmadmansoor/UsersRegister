@@ -55,6 +55,7 @@ Partial Class RegisterUsers
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.UsersStampsBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.UsersIdTextBox = New System.Windows.Forms.TextBox()
         Me.UserNameTextBox = New System.Windows.Forms.TextBox()
         Me.SectionTextBox = New System.Windows.Forms.TextBox()
@@ -101,7 +102,6 @@ Partial Class RegisterUsers
         Me.UsersStampsTableAdapter = New UsersRegister.UsersDataBaseDataSet2TableAdapters.UsersStampsTableAdapter()
         Me.TableAdapterManager = New UsersRegister.UsersDataBaseDataSet2TableAdapters.TableAdapterManager()
         Me.AxZKFPEngX1 = New AxZKFPEngXControl.AxZKFPEngX()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.CB_Edit = New System.Windows.Forms.CheckBox()
         UserNameLabel = New System.Windows.Forms.Label()
         SectionLabel = New System.Windows.Forms.Label()
@@ -294,7 +294,7 @@ Partial Class RegisterUsers
         Me.UsersStampsBindingNavigator.Name = "UsersStampsBindingNavigator"
         Me.UsersStampsBindingNavigator.Padding = New System.Windows.Forms.Padding(0, 0, 2, 0)
         Me.UsersStampsBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(616, 25)
+        Me.UsersStampsBindingNavigator.Size = New System.Drawing.Size(1067, 25)
         Me.UsersStampsBindingNavigator.TabIndex = 4
         Me.UsersStampsBindingNavigator.Text = "BindingNavigator1"
         '
@@ -410,6 +410,15 @@ Partial Class RegisterUsers
         Me.UsersStampsBindingNavigatorSaveItem.Name = "UsersStampsBindingNavigatorSaveItem"
         Me.UsersStampsBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 22)
         Me.UsersStampsBindingNavigatorSaveItem.Text = "Save Data"
+        '
+        'ToolStripButton2
+        '
+        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
+        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripButton2.Name = "ToolStripButton2"
+        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
+        Me.ToolStripButton2.Text = "ToolStripButton2"
         '
         'UsersIdTextBox
         '
@@ -552,7 +561,7 @@ Partial Class RegisterUsers
         Me.GroupBox1.Controls.Add(Me.UserNameTextBox)
         Me.GroupBox1.Controls.Add(Me.UsersIdTextBox)
         Me.GroupBox1.Enabled = False
-        Me.GroupBox1.Location = New System.Drawing.Point(51, 44)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 86)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(519, 130)
         Me.GroupBox1.TabIndex = 0
@@ -604,7 +613,7 @@ Partial Class RegisterUsers
         Me.GroupBox2.Controls.Add(Me.Stamp2TextBox)
         Me.GroupBox2.Controls.Add(Stamp3Label)
         Me.GroupBox2.Enabled = False
-        Me.GroupBox2.Location = New System.Drawing.Point(51, 177)
+        Me.GroupBox2.Location = New System.Drawing.Point(537, 42)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(519, 251)
         Me.GroupBox2.TabIndex = 1
@@ -644,9 +653,9 @@ Partial Class RegisterUsers
         Me.StatusStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.StatusStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StatusLabel3, Me.StatusLabel1, Me.StatusLabel2})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 649)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 528)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(616, 26)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1067, 26)
         Me.StatusStrip1.TabIndex = 3
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -682,10 +691,10 @@ Partial Class RegisterUsers
         Me.UsersStampsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsersStampsDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.Code, Me.UserName, Me.Designation, Me.BasicSalary, Me.Section, Me.Mobile, Me.Stamp1, Me.Stamp2, Me.Stamp3, Me.Stamp4, Me.Stamp5, Me.Stamp6, Me.Stamp7, Me.Stamp8, Me.Stamp9, Me.Stamp10})
         Me.UsersStampsDataGridView.DataSource = Me.UsersStampsBindingSource
-        Me.UsersStampsDataGridView.Location = New System.Drawing.Point(12, 436)
+        Me.UsersStampsDataGridView.Location = New System.Drawing.Point(12, 299)
         Me.UsersStampsDataGridView.Name = "UsersStampsDataGridView"
         Me.UsersStampsDataGridView.ReadOnly = True
-        Me.UsersStampsDataGridView.Size = New System.Drawing.Size(592, 210)
+        Me.UsersStampsDataGridView.Size = New System.Drawing.Size(1044, 226)
         Me.UsersStampsDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
@@ -827,23 +836,14 @@ Partial Class RegisterUsers
         Me.AxZKFPEngX1.Size = New System.Drawing.Size(24, 24)
         Me.AxZKFPEngX1.TabIndex = 30
         '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton2.Image = CType(resources.GetObject("ToolStripButton2.Image"), System.Drawing.Image)
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
-        '
         'CB_Edit
         '
         Me.CB_Edit.AutoSize = True
-        Me.CB_Edit.Location = New System.Drawing.Point(549, 28)
+        Me.CB_Edit.Location = New System.Drawing.Point(12, 231)
         Me.CB_Edit.Name = "CB_Edit"
-        Me.CB_Edit.Size = New System.Drawing.Size(55, 22)
+        Me.CB_Edit.Size = New System.Drawing.Size(93, 22)
         Me.CB_Edit.TabIndex = 12
-        Me.CB_Edit.Text = "Edit"
+        Me.CB_Edit.Text = "Edit User"
         Me.CB_Edit.UseVisualStyleBackColor = True
         '
         'RegisterUsers
@@ -851,7 +851,7 @@ Partial Class RegisterUsers
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(616, 675)
+        Me.ClientSize = New System.Drawing.Size(1067, 554)
         Me.Controls.Add(Me.CB_Edit)
         Me.Controls.Add(Me.UsersStampsDataGridView)
         Me.Controls.Add(Me.StatusStrip1)
@@ -865,7 +865,9 @@ Partial Class RegisterUsers
         Me.MaximizeBox = False
         Me.Name = "RegisterUsers"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "RegisterUsers"
+        Me.Text = "RegisterUsers                                                                    " &
+    "                                     //  Coded by Ahmad mansoor  // 0501800392  " &
+    "//"
         CType(Me.UsersStampsBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UsersStampsBindingNavigator.ResumeLayout(False)
         Me.UsersStampsBindingNavigator.PerformLayout()
