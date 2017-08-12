@@ -46,7 +46,6 @@ D:\Code\Feras\UsersRegister\UsersRegister\bin\RegUser\registerUsers.pdb
 D:\Code\Feras\UsersRegister\UsersRegister\bin\RegUser\registerUsers.xml
 D:\Code\Feras\UsersRegister\UsersRegister\bin\RegUser\Interop.ZKFPEngXControl.dll
 D:\Code\Feras\UsersRegister\UsersRegister\bin\RegUser\AxInterop.ZKFPEngXControl.dll
-D:\Code\Feras\UsersRegister\UsersRegister\obj\Debug\UsersRegister.vbprojResolveAssemblyReference.cache
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\UsersDataBase.mdf
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\UsersDataBase_log.ldf
 D:\Code\Feras\UsersRegister\UsersRegister\bin\Access\Access.exe.config

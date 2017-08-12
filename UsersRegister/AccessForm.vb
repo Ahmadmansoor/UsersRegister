@@ -286,6 +286,11 @@ end_sub:
             In_Out_Time = 0
             ExportExcel()
         End If
+        If (TimeOfDay.Hour = 6 And TimeOfDay.Minute = 0 And TimeOfDay.Second = 20) Then
+            In_Out_Time = 1
+        ElseIf (TimeOfDay.Hour = 18 And TimeOfDay.Minute = 0 And TimeOfDay.Second = 20) Then
+            In_Out_Time = 2
+        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
